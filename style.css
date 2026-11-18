@@ -38,3 +38,6 @@ p.check { background: var(--accent-soft); border-left: 4px solid var(--accent); 
 .card .d { display: block; color: var(--ink-3); font-size: 14px; margin-top: 2px; }
 .card a:hover .t { color: var(--accent); }
 footer { max-width: 72rem; margin: 0 auto; padding: 20px 16px 40px; border-top: 1px solid var(--rule); color: var(--ink-3); font-size: 15px; }
+.earlier { margin-top: 44px; padding: 18px 20px; border: 1px solid var(--rule); border-radius: 8px; }
+.home .earlier h2 { margin-top: 0; border-bottom: 0; padding-bottom: 0; }
+.earlier p { margin: 0; color: var(--ink-2); }

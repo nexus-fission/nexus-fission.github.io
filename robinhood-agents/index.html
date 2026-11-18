@@ -1,0 +1,256 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>How to Set Up a Robinhood AI Agent Account with Claude (MCP) | Nexus Fission</title>
+<meta name="description" content="How to set up a Robinhood AI agent account with Claude, from nothing.">
+<link rel="canonical" href="https://nexus-fission.github.io/robinhood-agents/">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Nexus Fission">
+<meta property="og:title" content="How to Set Up a Robinhood AI Agent Account with Claude (MCP) | Nexus Fission">
+<meta property="og:description" content="How to set up a Robinhood AI agent account with Claude, from nothing.">
+<meta property="og:url" content="https://nexus-fission.github.io/robinhood-agents/">
+<meta property="og:image" content="https://nexus-fission.github.io/robinhood-agents/thumbnail.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="stylesheet" href="../style.css">
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@type": "VideoObject",
+ "name": "How to Set Up a Robinhood AI Agent Account with Claude (MCP)",
+ "description": "How to set up a Robinhood AI agent account with Claude, from nothing. Robinhood lets an AI agent trade for you through its own MCP server, in a separate agentic account that holds only the money you move into it. In this video: connecting Claude Code to Robinhood, what the agent can see in your accounts, a real ten-dollar Bitcoin buy, a limit order placed and cancelled, and the three locks that keep it small: the agentic account, trade approvals, and your own allow and deny list. Real money, small amounts; nothing here is advice.",
+ "thumbnailUrl": [
+  "https://nexus-fission.github.io/robinhood-agents/thumbnail.jpg",
+  "https://i.ytimg.com/vi/onk7YdwdHx4/maxresdefault.jpg"
+ ],
+ "uploadDate": "2026-10-12T07:00:35Z",
+ "duration": "PT16M28S",
+ "embedUrl": "https://www.youtube.com/embed/onk7YdwdHx4",
+ "url": "https://nexus-fission.github.io/robinhood-agents/",
+ "publisher": {
+  "@type": "Organization",
+  "name": "Nexus Fission",
+  "url": "https://nexus-fission.github.io/"
+ },
+ "hasPart": [
+  {
+   "@type": "Clip",
+   "name": "The news",
+   "startOffset": 42,
+   "endOffset": 161,
+   "url": "https://www.youtube.com/watch?v=onk7YdwdHx4&t=42"
+  },
+  {
+   "@type": "Clip",
+   "name": "Words first",
+   "startOffset": 161,
+   "endOffset": 225,
+   "url": "https://www.youtube.com/watch?v=onk7YdwdHx4&t=161"
+  },
+  {
+   "@type": "Clip",
+   "name": "Set it up",
+   "startOffset": 225,
+   "endOffset": 329,
+   "url": "https://www.youtube.com/watch?v=onk7YdwdHx4&t=225"
+  },
+  {
+   "@type": "Clip",
+   "name": "What it can see",
+   "startOffset": 329,
+   "endOffset": 454,
+   "url": "https://www.youtube.com/watch?v=onk7YdwdHx4&t=329"
+  },
+  {
+   "@type": "Clip",
+   "name": "The trade",
+   "startOffset": 454,
+   "endOffset": 611,
+   "url": "https://www.youtube.com/watch?v=onk7YdwdHx4&t=454"
+  },
+  {
+   "@type": "Clip",
+   "name": "A limit order",
+   "startOffset": 611,
+   "endOffset": 692,
+   "url": "https://www.youtube.com/watch?v=onk7YdwdHx4&t=611"
+  },
+  {
+   "@type": "Clip",
+   "name": "The three locks",
+   "startOffset": 692,
+   "endOffset": 793,
+   "url": "https://www.youtube.com/watch?v=onk7YdwdHx4&t=692"
+  },
+  {
+   "@type": "Clip",
+   "name": "What Robinhood won't do",
+   "startOffset": 793,
+   "endOffset": 988,
+   "url": "https://www.youtube.com/watch?v=onk7YdwdHx4&t=793"
+  }
+ ]
+}
+</script>
+</head>
+<body>
+<header class="top"><a class="brand" href="../">Nexus Fission</a><span class="tag">Trading, made clear</span><a class="yt" href="https://www.youtube.com/@nexusfission">YouTube</a></header>
+<main class="page">
+<article>
+<p class="crumb"><a href="../">Lessons</a> / AI trading, step by step</p>
+<h1>How to Set Up a Robinhood AI Agent Account with Claude (MCP)</h1>
+<p class="meta">October 12, 2026 &middot; 16:28 video</p>
+<p class="lede">How to set up a Robinhood AI agent account with Claude, from nothing. Robinhood lets an AI agent trade for you through its own MCP server, in a separate agentic account that holds only the money you move into it. In this video: connecting Claude Code to Robinhood, what the agent can see in your accounts, a real ten-dollar Bitcoin buy, a limit order placed and cancelled, and the three locks that keep it small: the agentic account, trade approvals, and your own allow and deny list. Real money, small amounts; nothing here is advice.</p>
+<div class="video"><iframe src="https://www.youtube-nocookie.com/embed/onk7YdwdHx4" title="How to Set Up a Robinhood AI Agent Account with Claude (MCP)" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+<p class="asof">Prices and numbers are as of the video's publication, October 12, 2026.</p>
+<p class="code">The code for this lesson: <a href="https://github.com/nexusfissioncode/algo-trading/tree/main/robinhood-agents">github.com/nexusfissioncode/algo-trading/tree/main/robinhood-agents</a></p>
+<nav class="toc"><h2>In this lesson</h2><ol><li><a href="#part-1">The news</a></li><li><a href="#part-2">Words first</a></li><li><a href="#part-3">Set it up</a></li><li><a href="#part-4">What it can see</a></li><li><a href="#part-5">The trade</a></li><li><a href="#part-6">A limit order</a></li><li><a href="#part-7">The three locks</a></li><li><a href="#part-8">What Robinhood won't do</a></li></ol></nav>
+<section id="part-1">
+<h2>The news <a class="at" href="https://www.youtube.com/watch?v=onk7YdwdHx4&amp;t=42s">Watch from 0:42</a></h2>
+<figure><img src="img/slide-04.jpg" alt="The news: a frame from the video" loading="lazy" width="1280" height="720"></figure>
+<p>Robinhood is one of the biggest brokers in America, with more than 27,000,000 funded accounts, and in May it did something new. It opened a door in its vault for AI agents.</p>
+<p>It isn't alone. Coinbase and Binance let AI agents trade in their accounts too, and Catalyst, a startup building trading agents for everyday investors, has just raised $30,000,000.</p>
+<p>But Robinhood is the one most people already have an account with. So this is the moment to understand it properly, before you hand anything your money.</p>
+<p>If you've watched this channel, you've seen this idea before, built by hand on Alpaca's practice account: Claude talking to a broker, a server of our own that enforces our rules, and a desk of agents. Those videos are linked in the description, and everything this one needs is set up again here, from nothing.</p>
+<p>This time the broker built the door itself. Same idea, with real money, and a few things done very differently.</p>
+<p>Here's the announcement, on Robinhood's own newsroom. It's short, and it's worth reading yourself, because it tells you exactly what the company is and isn't promising.</p>
+<p>Robinhood is now open to agents. Not a feature hidden in a developer menu: a headline, on the company's own front page.</p>
+<p>And the line that matters for us: bring your agent from anywhere, and connect it through Robinhood's own M C P servers. Your own AI, whichever one you use, plugged straight into your brokerage account. The page goes on to promise safety controls and a real-time activity feed, and we'll test both. We'll see exactly what that plug is in a moment.</p>
+<p>Four months later, at the end of September, CoinDesk reported the next step: Robinhood's own agent, built into the app. An AI that trades your money around the clock, and you carry all the risk.</p>
+<p>Since May, more than 150,000 customers have opened agentic accounts.</p>
+<p>And Robinhood's own words: it does not control, supervise, monitor, recommend or audit agents. Keep that line in mind.</p>
+</section>
+<section id="part-2">
+<h2>Words first <a class="at" href="https://www.youtube.com/watch?v=onk7YdwdHx4&amp;t=161s">Watch from 2:41</a></h2>
+<figure><img src="img/slide-07.jpg" alt="Words first: a frame from the video" loading="lazy" width="1280" height="720"></figure>
+<p>Two words before we start. An AI agent is an AI that doesn't stop at answering.</p>
+<p>It acts. It calls tools, like get a price, or place an order, reads what comes back, and decides what to do next. Here the agent is Claude, running in Claude Code, a terminal app from Anthropic.</p>
+<p>And M C P, the model context protocol, is the plug: a standard way for a company to hand an AI a set of tools. Robinhood's M C P server lives at a web address, and Claude connects to it as a client.</p>
+<p>The agentic account is a separate Robinhood account: a deposit box beside your main one, in the same vault.</p>
+<p>The agent can only trade with the money you move into it. I moved in $100.</p>
+<p>Then there's an approval switch. For an agent you connect yourself, Robinhood's help pages say approvals start off. Switch them on in the app, and every order the agent places waits for a tap on your phone.</p>
+<p>And Robinhood says a feature called Loops is coming: a strategy the agent runs on repeat, even while you sleep.</p>
+</section>
+<section id="part-3">
+<h2>Set it up <a class="at" href="https://www.youtube.com/watch?v=onk7YdwdHx4&amp;t=225s">Watch from 3:45</a></h2>
+<figure><img src="img/slide-09.jpg" alt="Set it up: a frame from the video" loading="lazy" width="1280" height="720"></figure>
+<p>Here's the setup from nothing. You need Claude Code installed, and a Robinhood individual account in good standing. First, the version.</p>
+<p>Claude Code is installed. Then one line adds Robinhood's server, by its web address.</p>
+<p>Added, for this folder only. Claude Code keeps a list of servers per project, so a different folder won't have it.</p>
+<p>And the list of servers shows it, with its address, and connected.</p>
+<p>The first time, Claude Code shows the server as needing a sign-in. You type slash M C P, pick Robinhood, and choose Authenticate. Robinhood's sign-in page opens in your browser: sign in, and approve the agent. That part is your password, so I did it off camera.</p>
+<p>What the agent gets back is like a keycard. There are no keys to copy, and nothing secret sitting in a file in your project.</p>
+<p>Then Robinhood walks you through opening the agentic account and moving money in. You need an individual account in good standing, and the sign-in happens in your web browser.</p>
+<p>Inside Claude Code, slash M C P lists every server it knows.</p>
+<p>Here's Robinhood's, and I open it to see its details.</p>
+<p>Connected, and authenticated: the sign-in worked, and the address is Robinhood's own.</p>
+<p>And it offers 87 tools to the AI.</p>
+<p>87 tools is a lot. Quotes and charts, stock, option and crypto orders, market scans, price alerts, watchlists, company filings and earnings, and even a list of politicians' trades.</p>
+<p>Most of them only read. A handful move money: placing an order, cancelling one, exercising an option. Those are the ones to watch, and later we'll lock some of them away completely.</p>
+</section>
+<section id="part-4">
+<h2>What it can see <a class="at" href="https://www.youtube.com/watch?v=onk7YdwdHx4&amp;t=329s">Watch from 5:29</a></h2>
+<figure><img src="img/slide-13.jpg" alt="What it can see: a frame from the video" loading="lazy" width="1280" height="720"></figure>
+<p>Claude Code starts in the folder where I added Robinhood. First question, before any trading: which of my accounts can you see, and which one can you trade in?</p>
+<p>It calls Robinhood's account tool, reads what comes back, and lays it out as a table: two accounts.</p>
+<p>My main account: it can see it, but it can't act on it.</p>
+<p>And the one it can trade in: the agentic account, which I named M C P. Notice the account numbers are cut down to the last four digits. Hold that thought.</p>
+<p>So the keycard opens a window onto your main account, not its door. The agent can read your balances, your account numbers and your history there.</p>
+<p>And it opens exactly one door: the agentic account.</p>
+<p>Worth knowing before you connect anything. Whatever the agent can read, it can repeat: to you, into a log, or to whatever else it's connected to.</p>
+<p>Next: how much can you spend on crypto in that account, and do my trades there need my approval? Two more tool calls: the portfolio, and the approval setting.</p>
+<p>$100, all of it usable for crypto.</p>
+<p>And approvals are off, so trades in that account go through without asking me. I kept it off for this video. Claude adds that only I can change it, in the Robinhood app, and that it will check again before relying on it.</p>
+<p>Now a stranger question. Robinhood's answers came with more than data, so I ask Claude to quote, word for word, the instructions they gave it.</p>
+<p>They came in a field called guide, attached to the answers.</p>
+<p>Word for word: when you show an account number to the user, mask all but the last four digits. Exactly what Claude did a moment ago.</p>
+<p>So every answer from Robinhood carries notes for the AI: how to show numbers, which name to use, how to word an order. Robinhood is steering the agent from its side, and that's a good thing.</p>
+<p>It's also a reminder of how agents work. An agent acts on any text it reads, and it treats notes like these as instructions.</p>
+<p>Which raises a question we'll come back to. What if a note it reads, say inside a news story, isn't from Robinhood at all?</p>
+</section>
+<section id="part-5">
+<h2>The trade <a class="at" href="https://www.youtube.com/watch?v=onk7YdwdHx4&amp;t=454s">Watch from 7:34</a></h2>
+<figure><img src="img/slide-17.jpg" alt="The trade: a frame from the video" loading="lazy" width="1280" height="720"></figure>
+<p>Time to trade. Bitcoin, because crypto trades around the clock and this is late at night.</p>
+<p>What's it trading at right now? Claude asks Robinhood for a live quote.</p>
+<p>About 82,700. And look at the gap between the buy and sell prices: about $1,500. That's the spread, and when you buy at market, you pay the top of it.</p>
+<p>Now: preview a market buy of $10 of Bitcoin. A market order buys at whatever the price is right now.</p>
+<p>A preview is a dry run. Robinhood prices the order and checks it, and nothing is placed.</p>
+<p>A tiny slice of a Bitcoin, no fee, $10 in total. And Claude asks: do you want me to place this order?</p>
+<p>Before that order can reach Robinhood, there are gates. First, Claude itself asks, because Robinhood's instructions tell it to confirm before placing anything.</p>
+<p>Second, Claude Code. My settings file says: ask me before any crypto order. That's a rule in a file, not a polite request, and we'll open the file later.</p>
+<p>The third would be Robinhood's approval on my phone, and it's off. So when I say yes here, it's real money.</p>
+<p>Yes, place it. Claude reaches for Robinhood's order tool, and before that call goes out, Claude Code steps in.</p>
+<p>Buy, Bitcoin, market, $10. And Robinhood's own words: real money.</p>
+<p>Yes. Claude sends it, and Robinhood takes the order.</p>
+<p>And the order's status? Robinhood keeps every order the agent places, and the agent can ask for them.</p>
+<p>Filled. A tiny slice of a Bitcoin at about $83,500, $10 in total.</p>
+<p>Here's the trip it made. My sentence to Claude, Claude to Robinhood's server: one tool call to preview, and one to place.</p>
+<p>$10 left the box, and a sliver of Bitcoin landed in it.</p>
+<p>Now Robinhood's own website. There's a new section called Agentic, and it shows only the agent's account. I'm signed in to my own Robinhood account in this browser, so this is exactly what you'd see in yours.</p>
+<p>The M C P account, and what it's worth.</p>
+<p>The buy: $10 of Bitcoin, at the price we saw in the terminal.</p>
+<p>The agent connected to this account is listed by name: Claude, the one we just used.</p>
+<p>And one click to cut it off, if it ever does something you don't like. Disconnect, and the keycard stops working at once. Robinhood also sends a push notification for every trade an agent makes, so you hear about it either way.</p>
+<p>The account history has it too, newest first, with the account each order came from.</p>
+<p>Bitcoin market buy, from the M C P account.</p>
+</section>
+<section id="part-6">
+<h2>A limit order <a class="at" href="https://www.youtube.com/watch?v=onk7YdwdHx4&amp;t=611s">Watch from 10:11</a></h2>
+<figure><img src="img/slide-22.jpg" alt="A limit order: a frame from the video" loading="lazy" width="1280" height="720"></figure>
+<p>A market order buys now, at whatever the price is. A limit order names its own price, and waits for it.</p>
+<p>I'll ask for Ether at 10% under the market. Unless Ether drops by 10%, the order just sits there, waiting.</p>
+<p>And then I'll cancel it, which is the other tool that touches money.</p>
+<p>In one question: what's Ether trading at, and preview a limit buy of $10 of Ether at 10% under that price, in my agentic account. Ether is the coin of the Ethereum network, the second biggest after Bitcoin. Claude gets the quote first, works out the price, and then asks Robinhood for the preview.</p>
+<p>Ether is about 2490, so 10% under is about 2240.</p>
+<p>That's the limit price on the preview: the most it will pay for each Ether. Then the same question as before: do you want me to place it?</p>
+<p>Yes, place it, and the same gate in Claude Code: the tool, the coin, the limit price, the amount.</p>
+<p>Approved, and the order goes to Robinhood to wait.</p>
+<p>Open orders: confirmed, and nothing filled. It's waiting at its price.</p>
+<p>Cancel it. My settings ask before a cancel too, so the gate comes up again.</p>
+<p>Yes, and Claude sends the cancel.</p>
+<p>Cancel accepted. Robinhood cancels in the background, and a moment later the list of open orders was empty.</p>
+</section>
+<section id="part-7">
+<h2>The three locks <a class="at" href="https://www.youtube.com/watch?v=onk7YdwdHx4&amp;t=692s">Watch from 11:32</a></h2>
+<figure><img src="img/slide-24.jpg" alt="The three locks: a frame from the video" loading="lazy" width="1280" height="720"></figure>
+<p>So what keeps this small? Lock one is the box. The agent can only ever spend what's in the agentic account. I put in $100, not my savings.</p>
+<p>Lock two is Robinhood's approval switch. For an agent you connect yourself, approvals start off, and I kept them off for this video. While you're learning, switch them on: every order then waits for a tap on your phone, and only you can change that, in the app.</p>
+<p>Lock three is yours. It lives in a settings file, in the folder where Claude Code runs.</p>
+<p>Allow: every Robinhood tool, quotes, accounts and previews, without asking me.</p>
+<p>Ask: except placing or cancelling a crypto order. That's the gate we've been saying yes to.</p>
+<p>Deny: stock orders, option orders and exercising options. Never, from this folder, not even if I ask for them myself. And because deny beats allow, the broad allow rule can't open them again.</p>
+<p>Now let's test it. I start Claude Code in the same folder, and ask it to buy one share of Apple, at market, and to skip the preview and place it straight away. A stock order is exactly what the file denies.</p>
+<p>Claude goes looking for a way to do it, and it can't. A denied tool isn't blocked when the agent reaches for it; it's taken away before it starts. Claude can see it has no tool that places a stock order at all.</p>
+<p>That's the strongest of the three locks. It doesn't depend on the AI behaving, or on what it has read. The tool simply isn't there.</p>
+<p>Green runs, amber asks you first, red doesn't exist. Deny beats ask, and ask beats allow. The whole file is on GitHub, linked in the description.</p>
+</section>
+<section id="part-8">
+<h2>What Robinhood won't do <a class="at" href="https://www.youtube.com/watch?v=onk7YdwdHx4&amp;t=793s">Watch from 13:13</a></h2>
+<figure><img src="img/slide-27.jpg" alt="What Robinhood won't do: a frame from the video" loading="lazy" width="1280" height="720"></figure>
+<p>Robinhood says it plainly: it does not control, supervise, monitor, recommend or audit your agent. The risk is yours.</p>
+<p>And remember the notes under the door. An agent that reads the news, a web page or an email can meet text written to steer it: ignore your limits, buy now. That's called prompt injection, and researchers have already shown trading agents falling for it.</p>
+<p>Your locks don't read. The box holds only what you put in it, and a denied tool stays gone, whatever the agent was told.</p>
+<p>Time to close it all down. A fresh Claude Code session, and one question: preview selling all the Bitcoin in the agentic account, at market. Claude checks the position first, so it sells exactly what the account holds.</p>
+<p>Previewed: the whole slice, for a little under $10.</p>
+<p>Yes, place it, through the same gate in Claude Code. Robinhood fills a market sell straight away, and Claude reports it.</p>
+<p>And what's left in the account, and is anything still open? Three tool calls: positions, orders, and the portfolio.</p>
+<p>$99.80, all cash, and nothing open. The round trip cost 20 cents: that's the spread we saw at the start.</p>
+<p>So how does this compare with what we built on Alpaca? Robinhood has no practice account, so every order is real money. And the agent can spend only what's in its own box, where on Alpaca our keys opened the whole practice account.</p>
+<p>You sign in with your Robinhood login instead of copying keys. And the limits come from the approval switch and your own settings file, where on Alpaca we wrote a guard server that checks every order in code.</p>
+<p>My advice: learn the moves on a paper account, then give an agent a few real dollars, not your savings.</p>
+<p>One last look at Robinhood's Agentic page, after the sale. Same browser, same account, and nothing left open, which is how I wanted to end tonight. If you're following along, this is the page to keep open while your agent works: the value, the agent, and every trade it makes, as it makes it.</p>
+<p>$99.80. Claude is still connected, and the disconnect link is still one click away. The page lists the agent's orders under activity as well, so I don't even need to leave it. But the account history shows everything in one list, with the account each order came from, so that's where I go to finish. It's the same history page as before, under Account, then History.</p>
+<p>And the history tells the whole story, newest first.</p>
+<p>The sale, the cancelled Ether order, the buy, and the hundred dollars I moved in.</p>
+<p>To switch it all off, there's the disconnect link on Robinhood's Agentic page, and in Claude Code you can remove the server.</p>
+<p>Three locks: a small box, the approval switch, and your own deny list. Use all three while you learn.</p>
+<p>The settings file and every command are on GitHub, in the robinhood agents folder, and the link is in the description. If you want a lock that does more, like a size limit on every order, the video where we build our own M C P server is linked there too.</p>
+</section>
+<aside class="related"><h2>More lessons</h2><ul><li><a href="../agent-desk/">I split my AI trader into multi agents trader (Claude Agent SDK + Alpaca)</a></li><li><a href="../alert-to-claude/">My AI trades while I'm away: a TradingView alert wakes Claude, and it places the order (Alpaca)</a></li><li><a href="../always-on-cloud/">My AI trading bot runs 24/7 on a free Google Cloud server (TradingView, Claude, Alpaca)</a></li></ul></aside>
+</article>
+</main>
+<footer><p>Everything here is for education purposes only, and none of it is financial advice.</p><p><a href="https://www.youtube.com/@nexusfission">Nexus Fission on YouTube</a> &middot; <a href="https://github.com/nexusfissioncode/algo-trading">Code on GitHub</a></p></footer>
+</body>
+</html>

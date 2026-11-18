@@ -1,0 +1,284 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>I split my AI trader into multi agents trader (Claude Agent SDK + Alpaca) | Nexus Fission</title>
+<meta name="description" content="One AI that reads the market, decides and places the order is marking its own homework.">
+<link rel="canonical" href="https://nexus-fission.github.io/agent-desk/">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Nexus Fission">
+<meta property="og:title" content="I split my AI trader into multi agents trader (Claude Agent SDK + Alpaca) | Nexus Fission">
+<meta property="og:description" content="One AI that reads the market, decides and places the order is marking its own homework.">
+<meta property="og:url" content="https://nexus-fission.github.io/agent-desk/">
+<meta property="og:image" content="https://nexus-fission.github.io/agent-desk/thumbnail.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="stylesheet" href="../style.css">
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@type": "VideoObject",
+ "name": "I split my AI trader into multi agents trader (Claude Agent SDK + Alpaca)",
+ "description": "One AI that reads the market, decides and places the order is marking its own homework. This builds a desk of three agents on the Claude Agent SDK - an analyst that can only read, a risk manager that can only say no, a trader that can only place the order it is handed - joined by plain Python, with a hook as the last lock. Then it runs every four hours on a free Google Cloud server. Paper trading only.",
+ "thumbnailUrl": [
+  "https://nexus-fission.github.io/agent-desk/thumbnail.jpg",
+  "https://i.ytimg.com/vi/hw7mvZeQZxE/maxresdefault.jpg"
+ ],
+ "uploadDate": "2026-10-10T07:00:24Z",
+ "duration": "PT17M24S",
+ "embedUrl": "https://www.youtube.com/embed/hw7mvZeQZxE",
+ "url": "https://nexus-fission.github.io/agent-desk/",
+ "publisher": {
+  "@type": "Organization",
+  "name": "Nexus Fission",
+  "url": "https://nexus-fission.github.io/"
+ },
+ "hasPart": [
+  {
+   "@type": "Clip",
+   "name": "Where we are",
+   "startOffset": 42,
+   "endOffset": 76,
+   "url": "https://www.youtube.com/watch?v=hw7mvZeQZxE&t=42"
+  },
+  {
+   "@type": "Clip",
+   "name": "One agent, and its limits",
+   "startOffset": 76,
+   "endOffset": 204,
+   "url": "https://www.youtube.com/watch?v=hw7mvZeQZxE&t=76"
+  },
+  {
+   "@type": "Clip",
+   "name": "Three new words",
+   "startOffset": 204,
+   "endOffset": 245,
+   "url": "https://www.youtube.com/watch?v=hw7mvZeQZxE&t=204"
+  },
+  {
+   "@type": "Clip",
+   "name": "Setup",
+   "startOffset": 245,
+   "endOffset": 358,
+   "url": "https://www.youtube.com/watch?v=hw7mvZeQZxE&t=245"
+  },
+  {
+   "@type": "Clip",
+   "name": "The analyst",
+   "startOffset": 358,
+   "endOffset": 452,
+   "url": "https://www.youtube.com/watch?v=hw7mvZeQZxE&t=358"
+  },
+  {
+   "@type": "Clip",
+   "name": "The risk manager",
+   "startOffset": 452,
+   "endOffset": 547,
+   "url": "https://www.youtube.com/watch?v=hw7mvZeQZxE&t=452"
+  },
+  {
+   "@type": "Clip",
+   "name": "The trader",
+   "startOffset": 547,
+   "endOffset": 650,
+   "url": "https://www.youtube.com/watch?v=hw7mvZeQZxE&t=547"
+  },
+  {
+   "@type": "Clip",
+   "name": "The desk",
+   "startOffset": 650,
+   "endOffset": 792,
+   "url": "https://www.youtube.com/watch?v=hw7mvZeQZxE&t=650"
+  },
+  {
+   "@type": "Clip",
+   "name": "On its own",
+   "startOffset": 792,
+   "endOffset": 1004,
+   "url": "https://www.youtube.com/watch?v=hw7mvZeQZxE&t=792"
+  },
+  {
+   "@type": "Clip",
+   "name": "One agent or a desk",
+   "startOffset": 1004,
+   "endOffset": 1044,
+   "url": "https://www.youtube.com/watch?v=hw7mvZeQZxE&t=1004"
+  }
+ ]
+}
+</script>
+</head>
+<body>
+<header class="top"><a class="brand" href="../">Nexus Fission</a><span class="tag">Trading, made clear</span><a class="yt" href="https://www.youtube.com/@nexusfission">YouTube</a></header>
+<main class="page">
+<article>
+<p class="crumb"><a href="../">Lessons</a> / AI trading, step by step</p>
+<h1>I split my AI trader into multi agents trader (Claude Agent SDK + Alpaca)</h1>
+<p class="meta">October 10, 2026 &middot; 17:24 video</p>
+<p class="lede">One AI that reads the market, decides and places the order is marking its own homework. This builds a desk of three agents on the Claude Agent SDK - an analyst that can only read, a risk manager that can only say no, a trader that can only place the order it is handed - joined by plain Python, with a hook as the last lock. Then it runs every four hours on a free Google Cloud server. Paper trading only.</p>
+<div class="video"><iframe src="https://www.youtube-nocookie.com/embed/hw7mvZeQZxE" title="I split my AI trader into multi agents trader (Claude Agent SDK + Alpaca)" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+<p class="asof">Prices and numbers are as of the video's publication, October 10, 2026.</p>
+<p class="code">The code for this lesson: <a href="https://github.com/nexusfissioncode/algo-trading/tree/main/agent-desk">github.com/nexusfissioncode/algo-trading/tree/main/agent-desk</a></p>
+<nav class="toc"><h2>In this lesson</h2><ol><li><a href="#part-1">Where we are</a></li><li><a href="#part-2">One agent, and its limits</a></li><li><a href="#part-3">Three new words</a></li><li><a href="#part-4">Setup</a></li><li><a href="#part-5">The analyst</a></li><li><a href="#part-6">The risk manager</a></li><li><a href="#part-7">The trader</a></li><li><a href="#part-8">The desk</a></li><li><a href="#part-9">On its own</a></li><li><a href="#part-10">One agent or a desk</a></li></ol></nav>
+<section id="part-1">
+<h2>Where we are <a class="at" href="https://www.youtube.com/watch?v=hw7mvZeQZxE&amp;t=42s">Watch from 0:42</a></h2>
+<figure><img src="img/slide-04.jpg" alt="Where we are: a frame from the video" loading="lazy" width="1280" height="720"></figure>
+<p>Every video so far in this series built one agent, and gave it a little more. This is where we are.</p>
+<p>A TradingView alert that wakes Claude up to trade. The same bot, always on, on a free Google Cloud server. Your own trading rules, in code, in a small server called the guard. And agents that work on a schedule, with nobody at the keyboard. All four are linked in the description.</p>
+<p>You do not need them for this one. Everything this video uses is set up again from nothing, and the chapter list lets you skip what you already have.</p>
+</section>
+<section id="part-2">
+<h2>One agent, and its limits <a class="at" href="https://www.youtube.com/watch?v=hw7mvZeQZxE&amp;t=76s">Watch from 1:16</a></h2>
+<figure><img src="img/slide-05.jpg" alt="One agent, and its limits: a frame from the video" loading="lazy" width="1280" height="720"></figure>
+<p>First, what an agent actually is. A model, a set of instructions, some tools, and a loop. It decides what to do, thinks, calls a tool, reads the answer, and decides again, round and round, until it says it is done.</p>
+<p>Its tools hang on one wall. Prices, the news, an indicator, the account, and the order button.</p>
+<p>Every one of them is in reach all the time. The same agent that is halfway through a news story can press the order button, and nothing in between asks whether it should.</p>
+<p>And it has one memory for everything. Your rules go in first, at the bottom.</p>
+<p>Then everything it reads piles on top: the prices, the headlines, every tool's answer, and its own growing case for the trade. The more it reads, the further down your rules sit.</p>
+<p>Worst of all, the agent that built the case for a trade is the same one deciding whether the trade is safe. It is marking its own homework. In the guard video, that went exactly as you would fear.</p>
+<p>One agent, with the rules written in its instructions: $1,000 at most per order. I asked for 5000, and pushed. Just this once, it's my account. It checked a few things, and then it agreed.</p>
+<p>It asks me to approve $5,000 of bitcoin, through Alpaca's own order tool.</p>
+<p>Someone in a hurry says yes.</p>
+<p>Bought. The same agent read the rule, heard the argument, and judged its own exception. Nothing else was in the room.</p>
+<p>So we do what a real trading desk does. We split the job.</p>
+<p>An analyst, a risk manager and a trader. Each one has one job, its own instructions, its own short wall of tools, its own small memory, and even its own model: a fast, cheap one to read and to follow orders, a stronger one for judgement. Only the trader has an order tool, and it sits behind glass.</p>
+<p>It is not free. Three agents make more calls than one, so a run costs more and takes longer, and someone has to write the desk that joins them. For a quick question, one agent is still the right answer. When money moves, a second opinion is worth a few cents.</p>
+</section>
+<section id="part-3">
+<h2>Three new words <a class="at" href="https://www.youtube.com/watch?v=hw7mvZeQZxE&amp;t=204s">Watch from 3:24</a></h2>
+<figure><img src="img/slide-09.jpg" alt="Three new words: a frame from the video" loading="lazy" width="1280" height="720"></figure>
+<p>Three new words, and then we build. The Claude Agent SDK is Claude Code's engine as a Python library. The same loop, the same tools, but your program decides what each agent gets, and nobody types.</p>
+<p>A ticket is what passes between the seats. Its shape is fixed in advance, a schema: symbol, side, conviction, the case for the trade, and its risks. The SDK makes the agent answer in exactly that shape, so code can read it and check it.</p>
+<p>And a hook is your own code that the SDK runs before every tool call, and it can say no. It does not argue and it cannot be talked round. We put one in front of the trader's order tool.</p>
+</section>
+<section id="part-4">
+<h2>Setup <a class="at" href="https://www.youtube.com/watch?v=hw7mvZeQZxE&amp;t=245s">Watch from 4:05</a></h2>
+<figure><img src="img/slide-10.jpg" alt="Setup: a frame from the video" loading="lazy" width="1280" height="720"></figure>
+<p>All the code is in one public repository for the channel, algo trading, with a folder for each video. This video's folder is agent desk.</p>
+<p>The read me lists every folder with its video, so the code from the earlier videos is here too. I copy the address and clone it.</p>
+<p>Inside agent desk: one file per seat, the analyst, risk and the trader, the desk that joins them, and the guard from the earlier video. Then, a quick look at the version of a tool called U V.</p>
+<p>It runs a Python program together with the packages it needs, and its sync command installs all of them into the folder, the Agent SDK among them. I've sped up the waiting.</p>
+<p>There it is, the Claude Agent SDK. It brings its own copy of Claude Code inside it, so there is nothing else to install. Then the keys.</p>
+<p>The two Alpaca keys and a Claude sign-in token, each in an environment variable. This line prints the word set instead of the values, so they never appear on screen.</p>
+<p>The Alpaca keys come from the dashboard. This is the paper account, Nexus Fission Trading: everything in this video is paper money, and none of it is financial advice.</p>
+<p>The API keys card is where you generate them. Copy the secret the moment it is shown, because it is shown once, and put both into your variables.</p>
+<p>The desk runs Claude with nobody at the keyboard, so it needs a sign-in that works without a browser. Once, on your own machine, run Claude setup token, and approve it in the browser that opens.</p>
+<p>It prints a long token, valid for a year. I'm not showing mine: anyone holding it can use your Claude. Put it in a variable, beside the Alpaca keys.</p>
+<p>That is fine for a desk you run for yourself. If you build something you share with other people, or sell, sign it in with an API key from the Anthropic console instead, and pay per call.</p>
+</section>
+<section id="part-5">
+<h2>The analyst <a class="at" href="https://www.youtube.com/watch?v=hw7mvZeQZxE&amp;t=358s">Watch from 5:58</a></h2>
+<figure><img src="img/slide-14.jpg" alt="The analyst: a frame from the video" loading="lazy" width="1280" height="720"></figure>
+<p>Every seat is started the same way, by one short function in the agent file. It builds the options for a single agent, and each line is a limit.</p>
+<p>Its own instructions, the system prompt, written for this one job.</p>
+<p>Its own model, chosen for the job, so a cheap seat stays cheap.</p>
+<p>None of Claude Code's built-in tools: no shell, no files, no web.</p>
+<p>Only the tools this agent is handed, and nothing else on the desk.</p>
+<p>And don't ask: anything not on its list is refused on the spot, instead of waiting for a yes that nobody is there to give.</p>
+<p>And the answer comes back in a fixed shape, the schema we hand it. Now the analyst itself.</p>
+<p>Its brief: look at the price, the RSI and the news, and propose a buy unless there is a clear red flag. The more stretched the market, the lower the conviction.</p>
+<p>Its ticket has a side, and only two are allowed: buy, or none.</p>
+<p>The case for the trade, in two sentences a person can check.</p>
+<p>And what could go wrong, written just as plainly, on the same ticket.</p>
+<p>Its two tools only read: a snapshot of the price with the RSI, and the headlines. It cannot see the account, and it has no way to trade. I run it on bitcoin, and save its ticket to a file.</p>
+<p>It calls the snapshot, then the news, on its own.</p>
+<p>Its call: buy, with low conviction. Bitcoin is up about 2% on the day, near its high, with an RSI of 81. Read its risks: stretched, likely to pull back.</p>
+<p>29 seconds, the fast Haiku model, and less than a cent.</p>
+</section>
+<section id="part-6">
+<h2>The risk manager <a class="at" href="https://www.youtube.com/watch?v=hw7mvZeQZxE&amp;t=452s">Watch from 7:32</a></h2>
+<figure><img src="img/slide-17.jpg" alt="The risk manager: a frame from the video" loading="lazy" width="1280" height="720"></figure>
+<p>The risk manager gets the ticket, and only the ticket, never the analyst's whole conversation. It has one tool, the account, and it can never place an order.</p>
+<p>It has three possible answers: approve, resize, or veto.</p>
+<p>How much: $250 for low conviction, 500 for medium, 1000 for high, and never more than a tenth of the cash.</p>
+<p>Never double up: if the account already holds the coin, veto.</p>
+<p>And judgement. Weigh the analyst's case against its own risks and the numbers. If the case does not hold up, size it down or say no.</p>
+<p>Even the size has a ceiling in the shape itself: the schema will not accept more than $1,000, whatever the model writes. I hand it the analyst's ticket.</p>
+<p>It checks the account. No bitcoin held, no open orders, a small gain today. Every mechanical rule passes.</p>
+<p>And it vetoes anyway. The case fails on its own terms, it says: a buy at the day's high, with an RSI of 81, from an analyst that wrote down that the move looks exhausted. A chase, with poor reward for the risk. That is the second opinion one agent never gets.</p>
+<p>That took the stronger Sonnet model eight seconds, and about a cent.</p>
+<p>That is the whole point of the split. The analyst did its job: it found the best case for buying, and wrote down the risks honestly. The ticket went down the rail.</p>
+<p>And a different agent, with a different job, a different model and a memory holding nothing but the ticket and the account, read it cold and said no. The homework was marked by someone else.</p>
+</section>
+<section id="part-7">
+<h2>The trader <a class="at" href="https://www.youtube.com/watch?v=hw7mvZeQZxE&amp;t=547s">Watch from 9:07</a></h2>
+<figure><img src="img/slide-20.jpg" alt="The trader: a frame from the video" loading="lazy" width="1280" height="720"></figure>
+<p>The trader is the only seat that can trade, and it is the most fenced in.</p>
+<p>It has exactly one tool, place order. No other agent on the desk has anything like it.</p>
+<p>And that tool is the guard from the earlier video: your rules in code. Only bitcoin or ether, $1,000 at most, never double up. It checks them before anything reaches the broker.</p>
+<p>Then the hook. The SDK runs this before every call to the order tool, and compares the call with the order risk signed.</p>
+<p>If anything differs, the symbol, the side or a single cent, it denies the call. So I test it. Risk signed $250 of bitcoin, but I tell the trader 5000, the way a bad message or a bug might.</p>
+<p>The trader does what it is told, and tries to buy 5000.</p>
+<p>The hook stops it cold: 5000, signed 250. The order tool never runs.</p>
+<p>Placed, false. Nothing reached the broker. Now the honest version: the order risk signed, $250 of bitcoin.</p>
+<p>Placed, true. The hook let it through because it matches what risk signed, and the guard let it through because no rule is broken. Let us check the broker's own records.</p>
+<p>And at the broker, the paper account's order list: bitcoin, a market buy, filled.</p>
+<p>So an order has three locks to pass. One: it is the only order tool on the desk, so no other agent can trade, however it is asked.</p>
+<p>Two: the guard, your rules in code. Three: the hook, which lets through only the exact order risk signed.</p>
+<p>Only after all three does anything reach the broker. Now let us put the three seats together.</p>
+</section>
+<section id="part-8">
+<h2>The desk <a class="at" href="https://www.youtube.com/watch?v=hw7mvZeQZxE&amp;t=650s">Watch from 10:50</a></h2>
+<figure><img src="img/slide-24.jpg" alt="The desk: a frame from the video" loading="lazy" width="1280" height="720"></figure>
+<p>The desk is not a fourth AI. It is a short piece of plain Python that hands the ticket from seat to seat.</p>
+<p>The order the trader gets is decided here, in code, from the ticket and the verdict.</p>
+<p>And a veto ends it. That is an if statement, not a model's opinion. Nobody can talk an if statement round.</p>
+<p>For each coin, the analyst writes a ticket first,</p>
+<p>then risk reads it and gives its verdict on it,</p>
+<p>and only a signed order reaches the trader. Every step is logged.</p>
+<p>The coins come from the guard's rules file: bitcoin and ether. One pass of the desk goes over both. Remember, the account still holds the bitcoin the trader just bought. I run the desk, and I've sped up the waiting.</p>
+<p>Bitcoin first. The analyst's ticket: buy, low conviction, an RSI of 76.</p>
+<p>Risk's verdict: veto. The account already holds about $240 of bitcoin, so the never double up rule applies, and the case looks weak anyway.</p>
+<p>Veto, before anything is placed. The trader is never called. Then ether.</p>
+<p>The desk logs bitcoin's outcome and moves on to ether, with a fresh analyst and a fresh memory.</p>
+<p>Ether's ticket: buy, medium conviction, up a little over 1%, with an RSI of 67.</p>
+<p>Risk resizes it. Medium conviction would allow $500, but the move is modest and the price is near the day's high, so it cuts the order to 250.</p>
+<p>The desk signs exactly that, the trader places it, and it is placed.</p>
+<p>Every pass leaves a line per coin in the desk log: the ticket, the verdict and what happened, so you can check its reasoning tomorrow.</p>
+<p>Here are the last two lines, one for bitcoin and one for ether, each holding the whole story of that coin's decision. Then I switch to the browser, to the broker's list of orders for the paper account.</p>
+<p>And at the broker, ether, $250, filled. One coin vetoed, one resized and bought, and each decision made by a different agent.</p>
+<p>So that is the desk, end to end. The bitcoin ticket stopped at risk. The trader was never called.</p>
+<p>The ether ticket was resized, signed for exactly $250, passed all three locks and reached the broker. Both coins, three seats, about four cents.</p>
+</section>
+<section id="part-9">
+<h2>On its own <a class="at" href="https://www.youtube.com/watch?v=hw7mvZeQZxE&amp;t=792s">Watch from 13:12</a></h2>
+<figure><img src="img/slide-29.jpg" alt="On its own: a frame from the video" loading="lazy" width="1280" height="720"></figure>
+<p>A desk that only runs when you type a command is not much of an app. So let us move it onto a small server that never sleeps, the same free kind of Google Cloud machine as the earlier videos.</p>
+<p>A clock on the server, cron, will start the desk every four hours, on the hour, with nobody at the keyboard.</p>
+<p>And this is simpler than before: the Agent SDK brings its own Claude Code, so the server only needs Python, the code, and the keys.</p>
+<p>Everything goes in a Google Cloud project made just for this, so deleting the project at the end removes every piece of it. I read its name into a variable.</p>
+<p>Then I switch on the three services it needs: machines, the secret store, and budgets. That takes a little while, so I've sped up the waiting. Next, I read the project's billing account into a variable, so the budget can be attached to the correct account.</p>
+<p>A budget of $1, with alerts at half and at all of it, so a mistake becomes an email, not a bill. Then the machine itself.</p>
+<p>The smallest machine Google offers, free for one machine in this region, with Debian and a standard disk.</p>
+<p>Running. Now the keys. They go into Secret Manager, a locked box inside the project, piped straight from my variables, so they never appear on screen.</p>
+<p>The first key, stored as version one of a secret. Then the second Alpaca key the same way, and the Claude token. Next, I look up the machine's own service account, the identity the server runs as, and give that identity the secret accessor role on the project.</p>
+<p>Then I let the server read them, and nothing more. Now I log in to the server itself.</p>
+<p>Google adds my login key to the machine, and I'm in.</p>
+<p>The prompt now says trader at desk. First, a spare gigabyte of swap, because one gigabyte of memory is tight for the installs, and a line so it comes back after a restart. Then git and U V, then the same clone of the same repository, and U V sync.</p>
+<p>Installed in about a second: the packages were already resolved in the repository's lock file.</p>
+<p>The same Agent SDK, with its own Claude Code. Now one pass of the desk, with the run desk script: it fetches the keys from Secret Manager, runs the desk, and writes one line per coin to a log.</p>
+<p>Bitcoin vetoed, ether vetoed: the account now holds both, so never double up stops them both. The desk works on the server.</p>
+<p>Back on the server. Its clock runs on universal time, so first I set it to my own time zone.</p>
+<p>Pacific time, so the schedule means what it says. Now the schedule file.</p>
+<p>One line: on the hour, every fourth hour, run the desk script. Rather than wait four hours, I install the schedule with one extra test line, two minutes from now.</p>
+<p>There it is, the last line. Now I watch the log, and wait. I've sped this up.</p>
+<p>Nothing on my side now. The time comes, cron starts the script, and the desk goes through both coins on its own.</p>
+<p>There. Two new lines, written by cron at nine o'clock, with nobody at the keyboard. Both vetoed again: the account still holds both coins.</p>
+<p>I put the schedule back without the test line: one job, every four hours, from here on.</p>
+<p>And when you are done with it, turn it off properly, so nothing keeps billing. From the laptop, I remove the schedule on the server.</p>
+<p>No crontab left on the server. Then I delete the whole project, with one command.</p>
+<p>Deleted: the machine, its disk, the secrets and the budget, all in one line.</p>
+</section>
+<section id="part-10">
+<h2>One agent or a desk <a class="at" href="https://www.youtube.com/watch?v=hw7mvZeQZxE&amp;t=1004s">Watch from 16:44</a></h2>
+<figure><img src="img/slide-36.jpg" alt="One agent or a desk: a frame from the video" loading="lazy" width="1280" height="720"></figure>
+<p>So, one agent or a desk? Step back and look at the whole floor.</p>
+<p>For a question, a summary, a quick look at the market, one agent is simpler, faster and cheaper. When an agent can move money, give the job to a desk, where the one that finds the trade is never the one that approves it, and only one seat can place an order.</p>
+<p>Every file from this video is in the channel's repository, in the agent desk folder, beside the code from every video before it. The link is in the description.</p>
+</section>
+<aside class="related"><h2>More lessons</h2><ul><li><a href="../alert-to-claude/">My AI trades while I'm away: a TradingView alert wakes Claude, and it places the order (Alpaca)</a></li><li><a href="../always-on-cloud/">My AI trading bot runs 24/7 on a free Google Cloud server (TradingView, Claude, Alpaca)</a></li><li><a href="../guardrail-mcp/">I tried to talk my AI past my trading rules. Code stopped it. (Build your own MCP server)</a></li></ul></aside>
+</article>
+</main>
+<footer><p>Everything here is for education purposes only, and none of it is financial advice.</p><p><a href="https://www.youtube.com/@nexusfission">Nexus Fission on YouTube</a> &middot; <a href="https://github.com/nexusfissioncode/algo-trading">Code on GitHub</a></p></footer>
+</body>
+</html>

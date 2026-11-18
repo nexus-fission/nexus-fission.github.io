@@ -1,0 +1,40 @@
+/* Nexus Fission website: the channel's warm black and amber (shared/css/themes/nexusfission.css),
+   readable on a phone, no web fonts, no scripts. Written by hand; bin/site.js copies it. */
+:root { --ground: #100D0B; --paper: #1A1613; --ink: #F6EFE4; --ink-2: #BDB2A3; --ink-3: #8A8072; --rule: #3A322B;
+  --accent: #FF9F1C; --accent-soft: #3A2409; --up: #3DD68C; }
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: var(--ground); color: var(--ink); font: 18px/1.65 -apple-system, "Segoe UI", system-ui, Roboto, sans-serif; }
+a { color: var(--accent); text-decoration-thickness: 1px; text-underline-offset: 3px; }
+a:hover { text-decoration-thickness: 2px; }
+.top { display: flex; align-items: baseline; gap: 14px; flex-wrap: wrap; max-width: 72rem; margin: 0 auto; padding: 18px 16px; border-bottom: 1px solid var(--rule); }
+.top .brand { color: var(--ink); font-weight: 800; letter-spacing: .08em; text-transform: uppercase; text-decoration: none; }
+.top .tag { color: var(--ink-3); font-size: 15px; }
+.top .yt { margin-left: auto; font-size: 15px; }
+main { max-width: 72rem; margin: 0 auto; padding: 24px 16px 48px; }
+main.page { max-width: 46rem; }
+h1 { font-size: clamp(28px, 5vw, 42px); line-height: 1.15; margin: 8px 0 10px; letter-spacing: -.01em; }
+h2 { font-size: 24px; line-height: 1.25; margin: 40px 0 12px; }
+h2 .at { font-size: 14px; font-weight: 500; margin-left: 10px; white-space: nowrap; }
+.crumb, .meta, .asof { color: var(--ink-3); font-size: 15px; margin: 0; }
+.lede { color: var(--ink-2); font-size: 20px; }
+.asof { margin-top: 10px; }
+.code { background: var(--paper); border: 1px solid var(--rule); border-radius: 8px; padding: 10px 14px; font-size: 16px; overflow-wrap: anywhere; }
+.video { position: relative; aspect-ratio: 16 / 9; margin: 20px 0 0; background: #000; border-radius: 8px; overflow: hidden; }
+.video iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+figure { margin: 8px 0 18px; }
+figure img, .card img { display: block; width: 100%; height: auto; border-radius: 8px; border: 1px solid var(--rule); }
+p.check { background: var(--accent-soft); border-left: 4px solid var(--accent); padding: 10px 14px; border-radius: 0 8px 8px 0; font-weight: 600; }
+.toc { background: var(--paper); border: 1px solid var(--rule); border-radius: 8px; padding: 4px 18px 10px; margin-top: 24px; }
+.toc h2 { font-size: 17px; margin: 12px 0 4px; color: var(--ink-2); text-transform: uppercase; letter-spacing: .08em; }
+.toc ol { margin: 0; padding-left: 22px; }
+.related { border-top: 1px solid var(--rule); margin-top: 48px; }
+.related ul { padding-left: 20px; }
+.home h1 { margin-top: 18px; }
+.home h2 { border-bottom: 1px solid var(--rule); padding-bottom: 6px; }
+.cards { list-style: none; padding: 0; margin: 0; display: grid; gap: 22px; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); }
+.card a { color: var(--ink); text-decoration: none; display: block; }
+.card .t { display: block; font-weight: 700; line-height: 1.3; margin-top: 8px; }
+.card .d { display: block; color: var(--ink-3); font-size: 14px; margin-top: 2px; }
+.card a:hover .t { color: var(--accent); }
+footer { max-width: 72rem; margin: 0 auto; padding: 20px 16px 40px; border-top: 1px solid var(--rule); color: var(--ink-3); font-size: 15px; }

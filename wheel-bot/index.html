@@ -1,0 +1,327 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Wheel Strategy, Automated: A Python Options Bot That Picks Its Own Stocks (Alpaca Paper Trading) | Nexus Fission</title>
+<meta name="description" content="The wheel strategy, run by a plain Python program on an Alpaca paper account: sell a cash-secured put, take assignment, sell a covered call, get called away,...">
+<link rel="canonical" href="https://nexus-fission.github.io/wheel-bot/">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Nexus Fission">
+<meta property="og:title" content="The Wheel Strategy, Automated: A Python Options Bot That Picks Its Own Stocks (Alpaca Paper Trading) | Nexus Fission">
+<meta property="og:description" content="The wheel strategy, run by a plain Python program on an Alpaca paper account: sell a cash-secured put, take assignment, sell a covered call, get called away,...">
+<meta property="og:url" content="https://nexus-fission.github.io/wheel-bot/">
+<meta property="og:image" content="https://nexus-fission.github.io/wheel-bot/thumbnail.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="stylesheet" href="../style.css">
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@type": "VideoObject",
+ "name": "The Wheel Strategy, Automated: A Python Options Bot That Picks Its Own Stocks (Alpaca Paper Trading)",
+ "description": "The wheel strategy, run by a plain Python program on an Alpaca paper account: sell a cash-secured put, take assignment, sell a covered call, get called away, and start again. The bot picks its stocks two ways - your own list, or a screen of filters such as market cap from the SEC's share counts and RSI oversold - ranks each stock's put near a 0.30 delta by what it pays for the cash it ties up, and sells the best one. Then a covered call on shares it holds, and every later turn decided from what the account holds: take profit at half, roll near expiry, start again. Write your own filter in one function. For beginners learning the wheel and for traders who want to automate their own rules. For education only, not financial advice.",
+ "thumbnailUrl": [
+  "https://nexus-fission.github.io/wheel-bot/thumbnail.jpg",
+  "https://i.ytimg.com/vi/RJ-uVaPqOVQ/maxresdefault.jpg"
+ ],
+ "uploadDate": "2026-10-28T07:00:19Z",
+ "duration": "PT19M37S",
+ "embedUrl": "https://www.youtube.com/embed/RJ-uVaPqOVQ",
+ "url": "https://nexus-fission.github.io/wheel-bot/",
+ "publisher": {
+  "@type": "Organization",
+  "name": "Nexus Fission",
+  "url": "https://nexus-fission.github.io/"
+ },
+ "hasPart": [
+  {
+   "@type": "Clip",
+   "name": "Where we are",
+   "startOffset": 46,
+   "endOffset": 57,
+   "url": "https://www.youtube.com/watch?v=RJ-uVaPqOVQ&t=46"
+  },
+  {
+   "@type": "Clip",
+   "name": "How the wheel turns",
+   "startOffset": 57,
+   "endOffset": 176,
+   "url": "https://www.youtube.com/watch?v=RJ-uVaPqOVQ&t=57"
+  },
+  {
+   "@type": "Clip",
+   "name": "The bot's rules",
+   "startOffset": 176,
+   "endOffset": 329,
+   "url": "https://www.youtube.com/watch?v=RJ-uVaPqOVQ&t=176"
+  },
+  {
+   "@type": "Clip",
+   "name": "Picking the stocks",
+   "startOffset": 329,
+   "endOffset": 462,
+   "url": "https://www.youtube.com/watch?v=RJ-uVaPqOVQ&t=329"
+  },
+  {
+   "@type": "Clip",
+   "name": "Getting ready",
+   "startOffset": 462,
+   "endOffset": 558,
+   "url": "https://www.youtube.com/watch?v=RJ-uVaPqOVQ&t=462"
+  },
+  {
+   "@type": "Clip",
+   "name": "Your own list",
+   "startOffset": 558,
+   "endOffset": 640,
+   "url": "https://www.youtube.com/watch?v=RJ-uVaPqOVQ&t=558"
+  },
+  {
+   "@type": "Clip",
+   "name": "The screen",
+   "startOffset": 640,
+   "endOffset": 846,
+   "url": "https://www.youtube.com/watch?v=RJ-uVaPqOVQ&t=640"
+  },
+  {
+   "@type": "Clip",
+   "name": "Your own filter",
+   "startOffset": 846,
+   "endOffset": 919,
+   "url": "https://www.youtube.com/watch?v=RJ-uVaPqOVQ&t=846"
+  },
+  {
+   "@type": "Clip",
+   "name": "The call side",
+   "startOffset": 919,
+   "endOffset": 1061,
+   "url": "https://www.youtube.com/watch?v=RJ-uVaPqOVQ&t=919"
+  },
+  {
+   "@type": "Clip",
+   "name": "Every run after",
+   "startOffset": 1061,
+   "endOffset": 1104,
+   "url": "https://www.youtube.com/watch?v=RJ-uVaPqOVQ&t=1061"
+  },
+  {
+   "@type": "Clip",
+   "name": "Running it every day",
+   "startOffset": 1104,
+   "endOffset": 1177,
+   "url": "https://www.youtube.com/watch?v=RJ-uVaPqOVQ&t=1104"
+  }
+ ]
+}
+</script>
+</head>
+<body>
+<header class="top"><a class="brand" href="../">Nexus Fission</a><span class="tag">Trading, made clear</span><a class="yt" href="https://www.youtube.com/@nexusfission">YouTube</a></header>
+<main class="page">
+<article>
+<p class="crumb"><a href="../">Lessons</a> / Options, earnings and volatility</p>
+<h1>The Wheel Strategy, Automated: A Python Options Bot That Picks Its Own Stocks (Alpaca Paper Trading)</h1>
+<p class="meta">October 28, 2026 &middot; 19:37 video</p>
+<p class="lede">The wheel strategy, run by a plain Python program on an Alpaca paper account: sell a cash-secured put, take assignment, sell a covered call, get called away, and start again. The bot picks its stocks two ways - your own list, or a screen of filters such as market cap from the SEC's share counts and RSI oversold - ranks each stock's put near a 0.30 delta by what it pays for the cash it ties up, and sells the best one. Then a covered call on shares it holds, and every later turn decided from what the account holds: take profit at half, roll near expiry, start again. Write your own filter in one function. For beginners learning the wheel and for traders who want to automate their own rules. For education only, not financial advice.</p>
+<div class="video"><iframe src="https://www.youtube-nocookie.com/embed/RJ-uVaPqOVQ" title="The Wheel Strategy, Automated: A Python Options Bot That Picks Its Own Stocks (Alpaca Paper Trading)" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+<p class="asof">Prices and numbers are as of the video's publication, October 28, 2026.</p>
+<p class="code">The code for this lesson: <a href="https://github.com/nexusfissioncode/algo-trading/tree/main/wheel-bot">github.com/nexusfissioncode/algo-trading/tree/main/wheel-bot</a></p>
+<nav class="toc"><h2>In this lesson</h2><ol><li><a href="#part-1">Where we are</a></li><li><a href="#part-2">How the wheel turns</a></li><li><a href="#part-3">The bot's rules</a></li><li><a href="#part-4">Picking the stocks</a></li><li><a href="#part-5">Getting ready</a></li><li><a href="#part-6">Your own list</a></li><li><a href="#part-7">The screen</a></li><li><a href="#part-8">Your own filter</a></li><li><a href="#part-9">The call side</a></li><li><a href="#part-10">Every run after</a></li><li><a href="#part-11">Running it every day</a></li></ol></nav>
+<section id="part-1">
+<h2>Where we are <a class="at" href="https://www.youtube.com/watch?v=RJ-uVaPqOVQ&amp;t=46s">Watch from 0:46</a></h2>
+<figure><img src="img/slide-04.jpg" alt="Where we are: a frame from the video" loading="lazy" width="1280" height="720"></figure>
+<p>If puts and calls are new to you, the options video explains them from nothing. You will not need it to follow this one, though: every idea is explained again as it comes up.</p>
+</section>
+<section id="part-2">
+<h2>How the wheel turns <a class="at" href="https://www.youtube.com/watch?v=RJ-uVaPqOVQ&amp;t=57s">Watch from 0:57</a></h2>
+<figure><img src="img/slide-05.jpg" alt="How the wheel turns: a frame from the video" loading="lazy" width="1280" height="720"></figure>
+<p>Start at the top. You sell a put: a promise to buy 100 shares of a stock, at a price called the strike, if the buyer asks before the put expires.</p>
+<p>For that promise the buyer pays you a premium, and it is yours to keep whatever happens. In the list run you will see later, Walmart's $115 put, a month out, paid $280.</p>
+<p>It is called cash-secured because you set aside the money to buy those shares: the strike times 100. For this put, $11,500 waits in the account.</p>
+<p>Then, by expiry, one of two things happens. If the stock stays above the strike, the put expires worthless. You keep the premium, the cash is free again, and you sell another, round and round the top of the wheel, for as long as the stock behaves.</p>
+<p>If the stock ends below the strike, you are assigned. At expiry, Alpaca exercises any option that ends at least a cent in the money.</p>
+<p>You buy the hundred shares at the strike, with the cash you set aside, so you own the stock now, at the strike, less the premium you were paid.</p>
+<p>Next, you sell a call on those shares: a promise to sell them at a strike, at or above what they cost you. It is covered because you own them, and it pays another premium. If the stock stays below the strike, the call expires, and you sell another.</p>
+<p>If the stock rises above it, your shares are called away: sold, at the strike. They turn back into cash, and you are back at the top, ready for the next put. That is one full turn.</p>
+<p>Two risks come with it, and they are real. If the stock keeps falling after you are assigned, you own shares worth less than you paid. The premium only softens it: the Options Industry Council calls the most a cash-secured put can lose limited but substantial.</p>
+<p>And if the stock shoots up, the call caps your gain at its strike. In the council's words, the call caps the stock's upside potential. The wheel trades the big wins for steady premium.</p>
+</section>
+<section id="part-3">
+<h2>The bot's rules <a class="at" href="https://www.youtube.com/watch?v=RJ-uVaPqOVQ&amp;t=176s">Watch from 2:56</a></h2>
+<figure><img src="img/slide-08.jpg" alt="The bot's rules: a frame from the video" loading="lazy" width="1280" height="720"></figure>
+<p>The bot turns the wheel by rules, and every one is a line in its settings file. Here is its second half.</p>
+<p>The delta to aim for, and how far from it the bot may go.</p>
+<p>30 to 45 days left until the option expires.</p>
+<p>At least 100 contracts already open, so there are traders on the other side.</p>
+<p>And a bid and an ask no more than a quarter of their middle price apart.</p>
+<p>So which put? Every stock has a ladder of them, one strike after another. Further down the ladder, the premium is smaller, and so is the chance of being assigned.</p>
+<p>Delta is a rough guide to that chance. Selling a put with a delta of about 0.3 means, very roughly, a 70% chance it ends out of the money, and you just keep the premium.</p>
+<p>The bot looks for the put closest to 0.3, 30 to 45 days out, and skips any that hardly anyone holds, or whose bid and ask are far apart. That is why Walmart's 113 and 114 lost to the 115.</p>
+<p>The most cash one put may set aside: $40,000 here, so a stock at $500 a share is out of reach.</p>
+<p>Take profit once half the premium is made, and buy it back.</p>
+<p>And roll with 21 days or fewer to go. Under them, how it prices an order, which comes later. First, what those two mean.</p>
+<p>Then, on every run, it checks what it has already sold. Once a put or a call has made half its premium, it buys it back and frees the cash, rather than wait weeks for the last few dollars.</p>
+<p>With three weeks or less to go, it rolls: buys this one back, and sells the next one further out. Every one of these numbers is a line in the settings file, and they are placeholders to learn with, not advice.</p>
+<p>And here are those rules in the code itself: a few lines that decide what to do with anything already sold.</p>
+<p>Once half the premium is made, it buys the option back.</p>
+<p>With three weeks or less to go, it rolls to a later one.</p>
+<p>Every run starts by reading the account. This one sells nothing new, and only looks.</p>
+<p>Nothing is in the wheel yet. That line comes from the account, every time, not from anything the bot wrote down.</p>
+<p>And the bot keeps no notes of its own. Each run asks the account what it has sold and what it holds, and works out from that where each stock is on the wheel.</p>
+<p>That matters, because Alpaca does not send assignments over its live stream, and on a paper account they show up in the activity list only the next day. What the account holds is always right, so that is what the bot reads.</p>
+</section>
+<section id="part-4">
+<h2>Picking the stocks <a class="at" href="https://www.youtube.com/watch?v=RJ-uVaPqOVQ&amp;t=329s">Watch from 5:29</a></h2>
+<figure><img src="img/slide-14.jpg" alt="Picking the stocks: a frame from the video" loading="lazy" width="1280" height="720"></figure>
+<p>Now the other half: which stocks get a put at all. There are two ways, and the same code takes either.</p>
+<p>Your own list: the stocks you would be glad to own, written in the settings file. They go straight to the ranking.</p>
+<p>Or a screen: start from every stock on Alpaca that has options, and let filters, one after another, narrow it down.</p>
+<p>The first filter is size. Market cap is what a company is worth on the market: the number of its shares, times the price of one.</p>
+<p>The price comes from Alpaca. The share count comes from the SEC, the American market regulator, which publishes a file for each quarter with one number for every company that filed.</p>
+<p>Two catches, both handled in the code. A foreign company reports its own shares, not the ones traded here, and one Toyota share traded here stands for ten of its own, so the screen keeps American companies. And the SEC asks every program to say who is calling, so you put your name in the settings file.</p>
+<p>Here is that arithmetic for a few stocks, with a small helper from the folder.</p>
+<p>The SEC files give share counts for nearly 5000 American tickers.</p>
+<p>Walmart: the share count from its latest filing, times the price, comes to $934,000,000,000.</p>
+<p>Alphabet counts its two share classes apart on the cover page, so the code uses the quarter's average count instead: just over 4,000,000,000,000.</p>
+<p>And Toyota has no American share count here, so it is left out.</p>
+<p>The second filter is RSI, the relative strength index. It compares a stock's recent gains with its recent losses, on a scale from nothing to 100, smoothed over 14 days.</p>
+<p>Under 30 is called oversold: it has fallen hard and fast. For the wheel that is an idea to test, not a rule. A stock that just dropped pays a richer premium on its put, and carries more risk with it.</p>
+<p>Whatever the picker leaves, the bot finds each stock's put near 0.3, and ranks them by one number: the premium divided by the cash it sets aside, turned into a yearly rate, because the expiries differ.</p>
+<p>The top of the list gets the put. One new put per run, and never more than three stocks in the wheel at once, unless you change the settings.</p>
+</section>
+<section id="part-5">
+<h2>Getting ready <a class="at" href="https://www.youtube.com/watch?v=RJ-uVaPqOVQ&amp;t=462s">Watch from 7:42</a></h2>
+<figure><img src="img/slide-19.jpg" alt="Getting ready: a frame from the video" loading="lazy" width="1280" height="720"></figure>
+<p>The code is on GitHub, in the channel's repository, in the folder called wheel-bot. By the time you are watching this, it is there to clone with one line.</p>
+<p>Here is that folder as a map. The settings file feeds two halves. On the left, the pickers and their filters choose the stocks. On the right, one run reads the account, ranks the puts, decides each stock's next step, and talks to Alpaca through one file.</p>
+<p>And the tests check every turn of the wheel without touching the broker. It is plain Python, with no AI anywhere in it.</p>
+<p>You need an Alpaca account, and its paper account: pretend money, real prices, the same programming interface as real trading.</p>
+<p>This one is a paper account, and the name of the account says so, in plain words.</p>
+<p>The keys are made here, on the home page. Regenerate shows a new pair once: copy both into your environment, and never into a file you share.</p>
+<p>In a terminal, in that folder, here is what is in it.</p>
+<p>The settings file, the program itself, the code for the broker and the ranking, and the tests.</p>
+<p>The filters, one small file each, with the pickers beside them.</p>
+<p>One command installs everything it needs: uv reads the project file and sets up Python and the packages in the folder.</p>
+<p>Installed. Then the keys: your Alpaca paper keys go into the environment, never into a file you share, and so does your name for the SEC. This demo sends the program's name.</p>
+<p>This line checks they are set without printing them. Both paper keys, and the name for the SEC, are there.</p>
+</section>
+<section id="part-6">
+<h2>Your own list <a class="at" href="https://www.youtube.com/watch?v=RJ-uVaPqOVQ&amp;t=558s">Watch from 9:18</a></h2>
+<figure><img src="img/slide-22.jpg" alt="Your own list: a frame from the video" loading="lazy" width="1280" height="720"></figure>
+<p>First, your own list. Here is the top of the settings file.</p>
+<p>The picker line says which way to pick. It is set to the screen, and one word on the command line changes that for a single run.</p>
+<p>Your list is one line: Apple, Microsoft, JPMorgan, Coca-Cola and Walmart.</p>
+<p>So, run the wheel, picking from the list.</p>
+<p>Without the trade flag it is a dry run. It reads the account and the prices, decides, and prints what it would do, but sends nothing.</p>
+<p>Your five stocks, just as they are written in the file.</p>
+<p>Two are skipped, each with its reason. Microsoft's put near 0.3 would set aside $51,000, more than the 40,000 the settings allow. Coca-Cola had nothing near the target that trades well.</p>
+<p>The rest are ranked by what they pay for a year. Walmart's put comes first, with its star: the one this run would sell.</p>
+<p>Walmart, the $115 put, setting aside $11,500. And the order it would send, at the middle of the bid and the ask.</p>
+<p>Here is that run drawn out. On the left, Walmart's ladder: the put nearest 0.3 that enough people hold is the 115.</p>
+<p>On the right, the race. Walmart pays about 30% a year for the cash it ties up, JPMorgan 20, Apple 16. Walmart wins, and that is the put it would sell.</p>
+</section>
+<section id="part-7">
+<h2>The screen <a class="at" href="https://www.youtube.com/watch?v=RJ-uVaPqOVQ&amp;t=640s">Watch from 10:40</a></h2>
+<figure><img src="img/slide-24.jpg" alt="The screen: a frame from the video" loading="lazy" width="1280" height="720"></figure>
+<p>Now the screen. Here is its part of the settings file.</p>
+<p>The filters to run, in order: market cap, then RSI. Each name is a file in the filters folder.</p>
+<p>A market cap of at least $100,000,000,000, written out in full.</p>
+<p>Your name and email for the SEC go here, or in the environment, as in this demo.</p>
+<p>And RSI under 30, which is called oversold.</p>
+<p>Run it, with the screen as the picker. It downloads the share counts once a day and keeps them.</p>
+<p>It starts from every stock with options on Alpaca, over 6000 of them.</p>
+<p>Market cap leaves the 108 worth more than $100,000,000,000.</p>
+<p>And RSI under 30 leaves six. Four of them have no put near the target that trades well, so they are skipped.</p>
+<p>Applied Materials comes first. Its $355 put, a little over a month out, pays about $1,500, about 43% a year for the cash it ties up.</p>
+<p>So that is what it would sell, setting aside $35,500. Next, a look at the same stock on TradingView.</p>
+<p>Here is what just happened, drawn out. Every stock with options falls onto the first filter, and the small companies stop there.</p>
+<p>The big ones fall on to the second, and only the oversold ones stay lit. The ranking picks one of them, and its put.</p>
+<p>You can check the pick by eye. Here is Applied Materials on TradingView: the price, day by day.</p>
+<p>And under it, its RSI, down under 30: oversold. Now the options on this stock, on the same site.</p>
+<p>Then its option chain, for the same expiry: the puts, one row for each strike.</p>
+<p>This is the put the bot chose, the 355. Its bid and its ask, and how many are open: enough to trade.</p>
+<p>And its delta, about 0.31, the nearest to 0.3. The bot reads the same numbers from Alpaca's chain, and picks this row.</p>
+<p>Now the same run with the trade flag, while the market is open.</p>
+<p>Its first line says trading, on the paper account.</p>
+<p>The same screen runs, and it comes to the same pick.</p>
+<p>And the order goes out: sell to open, one contract, with a limit at the middle of the bid and the ask.</p>
+<p>No buyer in 20 seconds, so it asks a little less, and again, reading the quote each time.</p>
+<p>Filled, at $13.20 a share: $1,320 of premium for the one contract.</p>
+<p>Run it again without new puts, only looking after what it already has.</p>
+<p>Applied Materials is in the wheel now, with 36 days left. The price moved since the sale, so for now the put would cost more to buy back than it paid, and the bot just holds it.</p>
+<p>And there is the order at the broker, in the paper account.</p>
+<p>Here is that walk, drawn out. An option has two prices: the bid, the most a buyer will pay right now, and the ask, the least a seller will take. The bot asks for the middle.</p>
+<p>If nothing fills in 20 seconds, it reads the quote again and asks a little less, in steps, down to the bid. The settings file says how many steps, and how long each one waits.</p>
+<p>It may go a step or two past the bid, too. The free quotes a program gets are, in Alpaca's words, not actual quotes from the official feed, only indicative ones. And on paper, a sell order fills only once its price is at or below the best bid. If it still does not fill, it stays up for the day, and the next run sees it.</p>
+</section>
+<section id="part-8">
+<h2>Your own filter <a class="at" href="https://www.youtube.com/watch?v=RJ-uVaPqOVQ&amp;t=846s">Watch from 14:06</a></h2>
+<figure><img src="img/slide-30.jpg" alt="Your own filter: a frame from the video" loading="lazy" width="1280" height="720"></figure>
+<p>Your own rule is one small file. This one keeps stocks above their 200 day average: a dip in a rising stock, not a falling one.</p>
+<p>One function. It gets the stocks so far, the market data, and its own settings.</p>
+<p>And it returns the ones it keeps. That is all a filter is.</p>
+<p>Add its name to the list of filters. Here it is done for one run, on the command line.</p>
+<p>Oversold leaves the same six as before, the same oversold stocks.</p>
+<p>And above its 200 day average leaves none. A stock that has just fallen hard is rarely still above its long average, so nothing passes today, and the bot sells nothing.</p>
+<p>So loosen one rule: RSI under 40 instead of 30.</p>
+<p>More stocks pass the RSI filter this time: 28.</p>
+<p>Your own filter keeps nine of them, the ones still above their average.</p>
+<p>And a different stock wins: Arista Networks, and its $165 put.</p>
+<p>On the drawing, your filter is one more bar, wherever you put it in the list.</p>
+<p>A sector, a price range, how far a stock has fallen: anything you can work out from the market data can be a filter. Write the function, add its name, and run it dry first.</p>
+</section>
+<section id="part-9">
+<h2>The call side <a class="at" href="https://www.youtube.com/watch?v=RJ-uVaPqOVQ&amp;t=919s">Watch from 15:19</a></h2>
+<figure><img src="img/slide-33.jpg" alt="The call side: a frame from the video" loading="lazy" width="1280" height="720"></figure>
+<p>The call side needs shares, and an assignment cannot be made to happen on cue. So, to practise, this buys 100 shares of the same stock at the market. It stands in for an assignment, which would leave the same hundred shares in the account.</p>
+<p>The helper that does it is in the folder too, for practice only: 100 shares of Applied Materials.</p>
+<p>A market order goes out to the paper account, at whatever price the market has.</p>
+<p>Filled. The next run of the wheel sees the shares.</p>
+<p>Run the wheel again, for real, still with no new puts.</p>
+<p>It sees the shares: 100 of them, and no call covering them yet.</p>
+<p>And it refuses. Every call near 0.3 has fewer than 100 contracts open, so it holds the shares and sells nothing. That is the rule doing its job.</p>
+<p>To see the rest, loosen that one rule, for this run only: 20 open contracts will do. The settings file still says 100.</p>
+<p>Now a call passes: the 420, above what the shares cost, with a delta of about 0.33, a month out, for about $1,320.</p>
+<p>Sent, at the middle price. Then the walk: no buyer, so it asks a little less, step after step. Six prices, and still no fill, so the order stays up for the day, and the next run sees it.</p>
+<p>Now TradingView, in the browser: the same stock, a little later in the day.</p>
+<p>The price, day by day, and under it the RSI over 14 days, the same measure the screen used. Then, to see why no buyer took the order, open the option chain for Applied Materials.</p>
+<p>And its calls this time, for the same expiry as before.</p>
+<p>Here is the 420 the bot chose. Its bid and ask are far apart, and only 43 are open. The bid here is $11.40, below the 11.86 the bot last asked, so no buyer took it.</p>
+<p>Its delta, about 0.33: near the target. Last, the paper account's orders at Alpaca, to see what became of that order.</p>
+<p>And at the broker, the call order, still open, at the price it walked down to.</p>
+<p>On the wheel, that was the right-hand side: shares in the hub, and a call offered on them.</p>
+<p>No premium arrives until a buyer takes the call. If the order ends the day unfilled, the next run reads the account, sees the shares still uncovered, and offers a call again. From here the bot does the rest on its own, run after run.</p>
+</section>
+<section id="part-10">
+<h2>Every run after <a class="at" href="https://www.youtube.com/watch?v=RJ-uVaPqOVQ&amp;t=1061s">Watch from 17:41</a></h2>
+<figure><img src="img/slide-37.jpg" alt="Every run after: a frame from the video" loading="lazy" width="1280" height="720"></figure>
+<p>What happens on later runs depends on the market, so the tests show it instead, on made-up positions, without touching the broker.</p>
+<p>A put that has made half its premium is bought back.</p>
+<p>One with three weeks or less to go is rolled.</p>
+<p>An expired put frees the stock for a new one.</p>
+<p>Shares from an assignment get a covered call sold on them.</p>
+<p>Shares that are called away mean it goes back to selling puts.</p>
+<p>Every turn of the wheel passes its test.</p>
+<p>Then the rest: the ranking, the filters, the share counts, the settings.</p>
+<p>All of them pass, every single one.</p>
+<p>Put together, that is the whole wheel, every station tested.</p>
+<p>Each run, the bot looks at the account, finds where each stock is, and takes the next step.</p>
+</section>
+<section id="part-11">
+<h2>Running it every day <a class="at" href="https://www.youtube.com/watch?v=RJ-uVaPqOVQ&amp;t=1104s">Watch from 18:24</a></h2>
+<figure><img src="img/slide-39.jpg" alt="Running it every day: a frame from the video" loading="lazy" width="1280" height="720"></figure>
+<p>To run it every day, the folder has a small script for a scheduler to call.</p>
+<p>A scheduled job starts with almost nothing set, so the script reads your keys from a file only you can read.</p>
+<p>Then it runs the wheel once, for real, and adds what it printed to a log you can read later.</p>
+<p>And here is the one line for cron, the scheduler built into Mac and Linux.</p>
+<p>Every weekday at seven in the morning, Pacific time, half an hour after the market opens in New York. Your computer has to be awake for it.</p>
+<p>A laptop sleeps, though. The same code runs unchanged on a small always-on server: two earlier videos set one up for free on Google Cloud, and run jobs on a schedule there, with the keys kept on the server.</p>
+<p>If you trade at Interactive Brokers, ThetaGang is a well known open-source wheel bot built for it, and worth reading.</p>
+<p>The code for this one is on GitHub, in the folder wheel-bot. Change the settings, write your own filter, and run it dry until you trust what it says. This is for education only, and not financial advice.</p>
+</section>
+<aside class="related"><h2>More lessons</h2><ul><li><a href="../backtest-honest/">Backtesting Options: 4 Mistakes That Fool You, and What to Check (Python, Alpaca)</a></li><li><a href="../earnings-move/">How to Calculate a Stock's Expected Move Before Earnings (NVIDIA Example)</a></li><li><a href="../iron-condor-bot/">0DTE Iron Condor Bot in Python: Strikes, Exits and a Stop Your Broker Won't Hold (Alpaca)</a></li></ul></aside>
+</article>
+</main>
+<footer><p>Everything here is for education purposes only, and none of it is financial advice.</p><p><a href="https://www.youtube.com/@nexusfission">Nexus Fission on YouTube</a> &middot; <a href="https://github.com/nexusfissioncode/algo-trading">Code on GitHub</a></p></footer>
+</body>
+</html>

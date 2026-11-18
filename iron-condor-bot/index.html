@@ -1,0 +1,304 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>0DTE Iron Condor Bot in Python: Strikes, Exits and a Stop Your Broker Won't Hold (Alpaca) | Nexus Fission</title>
+<meta name="description" content="A same-day (0DTE) iron condor on SPY, run by a plain Python program on an Alpaca paper account.">
+<link rel="canonical" href="https://nexus-fission.github.io/iron-condor-bot/">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Nexus Fission">
+<meta property="og:title" content="0DTE Iron Condor Bot in Python: Strikes, Exits and a Stop Your Broker Won't Hold (Alpaca) | Nexus Fission">
+<meta property="og:description" content="A same-day (0DTE) iron condor on SPY, run by a plain Python program on an Alpaca paper account.">
+<meta property="og:url" content="https://nexus-fission.github.io/iron-condor-bot/">
+<meta property="og:image" content="https://nexus-fission.github.io/iron-condor-bot/thumbnail.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="stylesheet" href="../style.css">
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@type": "VideoObject",
+ "name": "0DTE Iron Condor Bot in Python: Strikes, Exits and a Stop Your Broker Won't Hold (Alpaca)",
+ "description": "A same-day (0DTE) iron condor on SPY, run by a plain Python program on an Alpaca paper account. What an iron condor is, from the four legs to the most it can lose; why today's options have no delta on free data, and how the at-the-money straddle gives the expected move instead; then the part most bots get wrong: getting out. Four exit rules - a profit target, a stop, the price touching a short strike, and a closing time before Alpaca's expiry-day cutoff - checked by the program, because the broker holds no stop for an options order, and a closing order that walks its price until it fills. Replays of real days show each rule firing, then a real condor on the paper account. For learning how options and automation work. For education only, not financial advice.",
+ "thumbnailUrl": [
+  "https://nexus-fission.github.io/iron-condor-bot/thumbnail.jpg",
+  "https://i.ytimg.com/vi/8Qc6DYKewmY/maxresdefault.jpg"
+ ],
+ "uploadDate": "2026-11-07T08:00:07Z",
+ "duration": "PT15M",
+ "embedUrl": "https://www.youtube.com/embed/8Qc6DYKewmY",
+ "url": "https://nexus-fission.github.io/iron-condor-bot/",
+ "publisher": {
+  "@type": "Organization",
+  "name": "Nexus Fission",
+  "url": "https://nexus-fission.github.io/"
+ },
+ "hasPart": [
+  {
+   "@type": "Clip",
+   "name": "Where we are",
+   "startOffset": 49,
+   "endOffset": 64,
+   "url": "https://www.youtube.com/watch?v=8Qc6DYKewmY&t=49"
+  },
+  {
+   "@type": "Clip",
+   "name": "An option's last day",
+   "startOffset": 64,
+   "endOffset": 107,
+   "url": "https://www.youtube.com/watch?v=8Qc6DYKewmY&t=64"
+  },
+  {
+   "@type": "Clip",
+   "name": "The iron condor",
+   "startOffset": 107,
+   "endOffset": 230,
+   "url": "https://www.youtube.com/watch?v=8Qc6DYKewmY&t=107"
+  },
+  {
+   "@type": "Clip",
+   "name": "Where the strikes go",
+   "startOffset": 230,
+   "endOffset": 316,
+   "url": "https://www.youtube.com/watch?v=8Qc6DYKewmY&t=230"
+  },
+  {
+   "@type": "Clip",
+   "name": "The exits",
+   "startOffset": 316,
+   "endOffset": 430,
+   "url": "https://www.youtube.com/watch?v=8Qc6DYKewmY&t=316"
+  },
+  {
+   "@type": "Clip",
+   "name": "Getting out on a wild day",
+   "startOffset": 430,
+   "endOffset": 473,
+   "url": "https://www.youtube.com/watch?v=8Qc6DYKewmY&t=430"
+  },
+  {
+   "@type": "Clip",
+   "name": "Getting ready",
+   "startOffset": 473,
+   "endOffset": 527,
+   "url": "https://www.youtube.com/watch?v=8Qc6DYKewmY&t=473"
+  },
+  {
+   "@type": "Clip",
+   "name": "Watching a day again",
+   "startOffset": 527,
+   "endOffset": 676,
+   "url": "https://www.youtube.com/watch?v=8Qc6DYKewmY&t=527"
+  },
+  {
+   "@type": "Clip",
+   "name": "A real one",
+   "startOffset": 676,
+   "endOffset": 751,
+   "url": "https://www.youtube.com/watch?v=8Qc6DYKewmY&t=676"
+  },
+  {
+   "@type": "Clip",
+   "name": "If it crashes",
+   "startOffset": 751,
+   "endOffset": 822,
+   "url": "https://www.youtube.com/watch?v=8Qc6DYKewmY&t=751"
+  },
+  {
+   "@type": "Clip",
+   "name": "Every rule tested",
+   "startOffset": 822,
+   "endOffset": 855,
+   "url": "https://www.youtube.com/watch?v=8Qc6DYKewmY&t=822"
+  },
+  {
+   "@type": "Clip",
+   "name": "Taking it further",
+   "startOffset": 855,
+   "endOffset": 900,
+   "url": "https://www.youtube.com/watch?v=8Qc6DYKewmY&t=855"
+  }
+ ]
+}
+</script>
+</head>
+<body>
+<header class="top"><a class="brand" href="../">Nexus Fission</a><span class="tag">Trading, made clear</span><a class="yt" href="https://www.youtube.com/@nexusfission">YouTube</a></header>
+<main class="page">
+<article>
+<p class="crumb"><a href="../">Lessons</a> / Options, earnings and volatility</p>
+<h1>0DTE Iron Condor Bot in Python: Strikes, Exits and a Stop Your Broker Won't Hold (Alpaca)</h1>
+<p class="meta">November 7, 2026 &middot; 15:00 video</p>
+<p class="lede">A same-day (0DTE) iron condor on SPY, run by a plain Python program on an Alpaca paper account. What an iron condor is, from the four legs to the most it can lose; why today's options have no delta on free data, and how the at-the-money straddle gives the expected move instead; then the part most bots get wrong: getting out. Four exit rules - a profit target, a stop, the price touching a short strike, and a closing time before Alpaca's expiry-day cutoff - checked by the program, because the broker holds no stop for an options order, and a closing order that walks its price until it fills. Replays of real days show each rule firing, then a real condor on the paper account. For learning how options and automation work. For education only, not financial advice.</p>
+<div class="video"><iframe src="https://www.youtube-nocookie.com/embed/8Qc6DYKewmY" title="0DTE Iron Condor Bot in Python: Strikes, Exits and a Stop Your Broker Won't Hold (Alpaca)" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+<p class="asof">Prices and numbers are as of the video's publication, November 7, 2026.</p>
+<p class="code">The code for this lesson: <a href="https://github.com/nexusfissioncode/algo-trading/tree/main/iron-condor-bot">github.com/nexusfissioncode/algo-trading/tree/main/iron-condor-bot</a></p>
+<nav class="toc"><h2>In this lesson</h2><ol><li><a href="#part-1">Where we are</a></li><li><a href="#part-2">An option's last day</a></li><li><a href="#part-3">The iron condor</a></li><li><a href="#part-4">Where the strikes go</a></li><li><a href="#part-5">The exits</a></li><li><a href="#part-6">Getting out on a wild day</a></li><li><a href="#part-7">Getting ready</a></li><li><a href="#part-8">Watching a day again</a></li><li><a href="#part-9">A real one</a></li><li><a href="#part-10">If it crashes</a></li><li><a href="#part-11">Every rule tested</a></li><li><a href="#part-12">Taking it further</a></li></ol></nav>
+<section id="part-1">
+<h2>Where we are <a class="at" href="https://www.youtube.com/watch?v=8Qc6DYKewmY&amp;t=49s">Watch from 0:49</a></h2>
+<figure><img src="img/slide-04.jpg" alt="Where we are: a frame from the video" loading="lazy" width="1280" height="720"></figure>
+<p>If calls, puts and strikes are new to you, the options video explains them from nothing, and the wheel bot built the first options program on this same paper account. You will not need either one: every idea comes again as it is used.</p>
+</section>
+<section id="part-2">
+<h2>An option's last day <a class="at" href="https://www.youtube.com/watch?v=8Qc6DYKewmY&amp;t=64s">Watch from 1:04</a></h2>
+<figure><img src="img/slide-05.jpg" alt="An option's last day: a frame from the video" loading="lazy" width="1280" height="720"></figure>
+<p>Every option has an expiry, and after it, it is worth only what it pays at that moment. Zero DTE means zero days to expiry: options that expire on the day they are traded.</p>
+<p>Here is one, the 765 call, through its last day. In the morning it is worth something even with SPY below the strike, because there is still time to get there.</p>
+<p>By the close that time is gone. Below the strike it is worth nothing; above it, only the difference. That melting is called time decay, and whoever sells the option is paid for it.</p>
+<p>And same-day options have become huge. In the third quarter of this year, Cboe counted a record 24,000,000 DTE contracts a day, about 36% of all options traded.</p>
+</section>
+<section id="part-3">
+<h2>The iron condor <a class="at" href="https://www.youtube.com/watch?v=8Qc6DYKewmY&amp;t=107s">Watch from 1:47</a></h2>
+<figure><img src="img/slide-06.jpg" alt="The iron condor: a frame from the video" loading="lazy" width="1280" height="720"></figure>
+<p>An iron condor is four options on the same expiry, two spreads in one: a put spread under the price and a call spread over it. Here is a real one, on the 20 third of October, at ten in the morning.</p>
+<p>First, sell a put below the price, at 757. Someone pays 85 cents a share for your promise to buy SPY there.</p>
+<p>Then buy a put $5 lower, for 22 cents. That one caps the loss if SPY falls through.</p>
+<p>The same above the price: sell a call at 765 and buy one $5 higher.</p>
+<p>What the two you sell pay, less what the two you buy cost, is the credit: a dollar and seven cents a share, $107 for one condor, since a contract is 100 shares. The corridor between the short strikes is where SPY has to stay.</p>
+<p>That is the condor this bot set up that day, replayed on its real prices.</p>
+<p>It priced the straddle, and from it the expected move. More on both in a moment.</p>
+<p>Then the four strikes: the shorts about that far out, each wing $5 further.</p>
+<p>Here is what that condor makes or loses at the close, for every price SPY could end on.</p>
+<p>Anywhere inside the corridor, all four options expire worthless, and it keeps the whole credit: $107.</p>
+<p>Past a wing, the loss stops growing: the width, $5, less the credit, times 100. $393, the most it can lose.</p>
+<p>In between are the breakevens: the short strikes, moved out by the credit. It is a trade that wins small and often, and loses bigger, less often. That is why the exits matter.</p>
+<p>Two things go wrong. The first is speed. On the 20 fifth of September, SPY fell almost $3 in the five minutes after a condor like this one was opened, straight through the short put.</p>
+<p>The second is assignment. SPY options are American style, so they can be exercised early, and at the close anything a cent in the money is exercised. A short option can turn into 100 shares of SPY.</p>
+</section>
+<section id="part-4">
+<h2>Where the strikes go <a class="at" href="https://www.youtube.com/watch?v=8Qc6DYKewmY&amp;t=230s">Watch from 3:50</a></h2>
+<figure><img src="img/slide-10.jpg" alt="Where the strikes go: a frame from the video" loading="lazy" width="1280" height="720"></figure>
+<p>So where do the strikes go? Many option bots choose them by delta, a rough chance of ending in the money.</p>
+<p>But on Alpaca's free data, options that expire today or tomorrow come with no delta at all. For the 20 eighth of October, 302 contracts, and not one with a delta. A few days further out, about half have one.</p>
+<p>So the bot uses prices instead. At ten o'clock that day, the strike nearest the price, 761, had a call at a dollar and 83 cents and a put at $2.27.</p>
+<p>Buy both, and you profit if SPY moves far enough either way. That pair is the straddle. On this morning it cost $4.10: what the market charged for the rest of the day's move.</p>
+<p>85% of it is a common yardstick for the expected move, here about three and a half dollars. The rule comes from tastylive, who meant it for one-off events like earnings, so treat it as a rough guide.</p>
+<p>The bot sells the strikes at least that far out, 757 and 765, and buys the wings $5 beyond them.</p>
+<p>Each of those choices is one line of the bot's settings file.</p>
+<p>The time it opens the condor: ten o'clock, New York time, after the opening swing has settled.</p>
+<p>How far out the short strikes go: 85% of the straddle.</p>
+<p>And how wide the wings are: $5. Every number here is a placeholder to learn with, not advice.</p>
+</section>
+<section id="part-5">
+<h2>The exits <a class="at" href="https://www.youtube.com/watch?v=8Qc6DYKewmY&amp;t=316s">Watch from 5:16</a></h2>
+<figure><img src="img/slide-13.jpg" alt="The exits: a frame from the video" loading="lazy" width="1280" height="720"></figure>
+<p>Now the exits. Every few seconds the bot works out what buying the condor back would cost, and checks four rules, in order. The first one that fires closes it.</p>
+<p>One: take profit, once half the credit is kept. On the 20 third, when buying back cost 54 cents or less.</p>
+<p>Two: the stop, when buying back costs twice the credit, so the loss is about the credit itself.</p>
+<p>Three: close if SPY touches a short strike, often before the stop is reached.</p>
+<p>Four: close by a quarter past three, whatever happens.</p>
+<p>Why must the program check them itself? At Alpaca, an options order is a market order or a limit order. There is no stop order to leave with the broker.</p>
+<p>So the stop lives in the code, and it only works while the program is running. If the laptop sleeps, nothing is watching the condor.</p>
+<p>And the day has walls.</p>
+<p>On expiry day, Alpaca stops taking orders for SPY options at half past three, New York time. Anything sent later is rejected.</p>
+<p>At a quarter to four, it starts selling out expiring positions itself.</p>
+<p>So the bot's own closing time sits before both, at a quarter past three, with room for a closing order that takes a few tries.</p>
+<p>Here are the four rules in the code: one function, checked in order.</p>
+<p>Buying back costs half the credit or less: take profit.</p>
+<p>Twice the credit or more to buy back: the stop.</p>
+<p>The price at or past a short strike: touch.</p>
+<p>And the closing time, a quarter past three: close, whatever the price is doing.</p>
+<p>Otherwise, it holds, and looks again a few seconds later.</p>
+<p>Their numbers are in the settings file too: half the credit for the target,</p>
+<p>twice the credit for the stop, so a bad day costs about what the condor paid,</p>
+<p>and a quarter past three to close. Change any of them in this one file.</p>
+</section>
+<section id="part-6">
+<h2>Getting out on a wild day <a class="at" href="https://www.youtube.com/watch?v=8Qc6DYKewmY&amp;t=430s">Watch from 7:10</a></h2>
+<figure><img src="img/slide-18.jpg" alt="Getting out on a wild day: a frame from the video" loading="lazy" width="1280" height="720"></figure>
+<p>Deciding to close is half of it. The closing order still has to fill.</p>
+<p>The bot sends one order for all four legs, which Alpaca takes as a single order, starting at the mid price, halfway between bid and ask.</p>
+<p>If no one takes it in ten seconds, it reads the quotes again and offers a little more, step by step, up to the natural price: every short bought back at its ask, every wing sold at its bid.</p>
+<p>And when the market is running away, a couple of steps beyond it. An order that never fills is no exit at all.</p>
+<p>And the walk, in the closing file: a list of prices to ask, in order.</p>
+<p>The mid first, then even steps up,</p>
+<p>towards the natural price, and never below the mid.</p>
+</section>
+<section id="part-7">
+<h2>Getting ready <a class="at" href="https://www.youtube.com/watch?v=8Qc6DYKewmY&amp;t=473s">Watch from 7:53</a></h2>
+<figure><img src="img/slide-20.jpg" alt="Getting ready: a frame from the video" loading="lazy" width="1280" height="720"></figure>
+<p>All of it is one small folder of plain Python. By the time you are watching this, it is on GitHub, in the channel's algo trading repository, with every command in order.</p>
+<p>The settings file feeds one run of the day. It asks the strikes file for the four legs, the exits file for a decision, and the closer to get out. Only the broker file talks to Alpaca.</p>
+<p>And one file, the market, answers two questions: where is the price, and what do the options cost. Today, live, or any past day, replayed.</p>
+<p>In the folder:</p>
+<p>the settings file, with every number the bot uses,</p>
+<p>and a file for each job, with the tests beside them.</p>
+<p>One command installs everything the bot needs, in a folder of its own, kept apart from the rest of the laptop.</p>
+<p>And the paper keys from your Alpaca account, in two environment variables, never printed. The wheel bot video shows where to make them.</p>
+</section>
+<section id="part-8">
+<h2>Watching a day again <a class="at" href="https://www.youtube.com/watch?v=8Qc6DYKewmY&amp;t=527s">Watch from 8:47</a></h2>
+<figure><img src="img/slide-22.jpg" alt="Watching a day again: a frame from the video" loading="lazy" width="1280" height="720"></figure>
+<p>Now let it run that day, the 20 third of October. A replay looks every 60 seconds, and every order fills at the price it asks, so the fills are an estimate. Nothing is sent.</p>
+<p>At 14 minutes past 12, buying it back cost 54 cents, half the credit: take profit.</p>
+<p>$53 kept, of the $107.</p>
+<p>Drawn out, SPY wandered inside the corridor all morning, and hour by hour the condor was worth a little less.</p>
+<p>At 14 minutes past 12, the first rule fired: take profit.</p>
+<p>The 20 fifth of September. The same command with a different date, the same rules, and a very different morning. Watch how quickly this one is over. It opens the condor at ten, as it always does.</p>
+<p>Five minutes after it opened, the stop fired: buying back cost a dollar and 56 cents, against a stop at a dollar and 48 cents.</p>
+<p>$82 lost, on a $74 credit.</p>
+<p>In those five minutes, SPY dropped almost $3, and the condor's buy-back cost more than doubled.</p>
+<p>The stop was set at a dollar and 48 cents. By the time the bot looked, buying back cost a dollar and 56 cents, already past it. A stop limits a loss. In a fast market, it does not hold it at your number.</p>
+<p>The fourteenth of October. The same command again with a new date, and this time the touch rule gets its turn. Watch for the line that starts with exit: that is the rule firing.</p>
+<p>SPY came down to the short put, at 771, and the touch rule closed the condor.</p>
+<p>$37 lost.</p>
+<p>SPY slid down through the morning and met the short strike just before 20 to 12.</p>
+<p>With the touch rule switched off, the same day ran on to the stop at 11 minutes past 12, and lost $78. Getting out early cost less here. On another day, it might close a trade that would have come back. That is the trade-off you choose.</p>
+<p>Last, the seventh of October, with the touch rule switched off for this one run, from the command line, using set. The settings file itself stays exactly as it was.</p>
+<p>Nothing else fired, so the clock closed it, at a quarter past three.</p>
+<p>$26 kept, closed by the clock.</p>
+<p>SPY spent the afternoon climbing to the short call and hanging around it, never far enough to hit the stop.</p>
+<p>Then the clock. At a quarter past three the bot closed it, with 15 minutes to spare before Alpaca's cutoff.</p>
+</section>
+<section id="part-9">
+<h2>A real one <a class="at" href="https://www.youtube.com/watch?v=8Qc6DYKewmY&amp;t=676s">Watch from 11:16</a></h2>
+<figure><img src="img/slide-30.jpg" alt="A real one: a frame from the video" loading="lazy" width="1280" height="720"></figure>
+<p>Now a real one, on the paper account, on the 20 ninth of October: the same command, with trade added. It was started after ten, so it opens the condor straight away.</p>
+<p>The top line says it: trading, on the paper account.</p>
+<p>At 13 minutes past 11 it priced the straddle and chose the strikes: puts at 761 and 766, calls at 773 and 778. All four legs go as one order, asking 77 cents.</p>
+<p>It filled at once: $77 in, on the paper account.</p>
+<p>Then it watches, with take profit at 39 cents and the stop at a dollar and 54 cents.</p>
+<p>Drawn out: SPY's morning, and at 13 minutes past 11 the condor went in around it, with the short strikes at 766 and 773.</p>
+<p>Every 60 seconds, a look: SPY, the cost to buy back, the profit or loss. Two minutes in, it was $3 up.</p>
+<p>One look, as the program prints it: the time, where SPY is, what buying the condor back would cost, and the profit or loss so far.</p>
+<p>And at the broker, Alpaca's orders page: the four legs, as one order, filled. Now stop the program, the way a crash would.</p>
+</section>
+<section id="part-10">
+<h2>If it crashes <a class="at" href="https://www.youtube.com/watch?v=8Qc6DYKewmY&amp;t=751s">Watch from 12:31</a></h2>
+<figure><img src="img/slide-33.jpg" alt="If it crashes: a frame from the video" loading="lazy" width="1280" height="720"></figure>
+<p>A few minutes later, the same command again.</p>
+<p>It keeps no notes of its own, yet it finds the condor in the account: the four strikes, and the 77 cents it was sold for.</p>
+<p>And it carries on watching. Its next look came at 27 minutes past 11: nothing was watching the condor in between.</p>
+<p>No rule fired, so to show a real close, it is closed by hand, with close now. Its top line wrongly says dry run: close now does send its orders, and that line is fixed in the code on GitHub.</p>
+<p>The exit line names the reason: by hand, from the command line.</p>
+<p>The closing order asked 72 cents, then 84, and filled at 75.</p>
+<p>$2 kept, of the $77. The point is not the $2: a stopped program found its condor and closed it.</p>
+<p>At the broker, the closing order: the same four legs, bought back as one.</p>
+<p>And if the program stops - a crash, a reboot, a closed laptop - the condor is still open at the broker.</p>
+<p>So the bot keeps no notes of its own. When it starts, it reads the account's positions, finds today's four legs and what they were sold for, and carries on watching.</p>
+</section>
+<section id="part-11">
+<h2>Every rule tested <a class="at" href="https://www.youtube.com/watch?v=8Qc6DYKewmY&amp;t=822s">Watch from 13:42</a></h2>
+<figure><img src="img/slide-35.jpg" alt="Every rule tested: a frame from the video" loading="lazy" width="1280" height="720"></figure>
+<p>Every rule has a test that feeds it made-up prices, so you can change the code and know it still does what it says.</p>
+<p>Take profit, once half the credit is kept,</p>
+<p>the stop, once buying back costs twice the credit,</p>
+<p>the price reaching or touching either of the short strikes,</p>
+<p>the closing time, a quarter past three, whatever the price is doing,</p>
+<p>and, when two fire at once, the first rule in the list wins.</p>
+<p>36 tests in all, passing.</p>
+<p>Four rules, each one tested, each one a line in the settings file you can change.</p>
+</section>
+<section id="part-12">
+<h2>Taking it further <a class="at" href="https://www.youtube.com/watch?v=8Qc6DYKewmY&amp;t=855s">Watch from 14:15</a></h2>
+<figure><img src="img/slide-37.jpg" alt="Taking it further: a frame from the video" loading="lazy" width="1280" height="720"></figure>
+<p>Where to take it from here: change the numbers, or add a rule of your own to the exits file, such as a stop after a set time.</p>
+<p>Index options like XSP settle in cash and cannot be assigned early. Alpaca trades them, but its data has no index prices yet, so this bot stays on SPY.</p>
+<p>To run it every day without your laptop, the always-on server video sets up the same kind of program on a free cloud machine. The code is on GitHub. This is for education only, and not financial advice: it is about how the trade and the program work, not whether they make money.</p>
+</section>
+<aside class="related"><h2>More lessons</h2><ul><li><a href="../backtest-honest/">Backtesting Options: 4 Mistakes That Fool You, and What to Check (Python, Alpaca)</a></li><li><a href="../earnings-move/">How to Calculate a Stock's Expected Move Before Earnings (NVIDIA Example)</a></li><li><a href="../options-explained/">Options Explained Simply: Calls, Puts and the Greeks in One Picture (Delta, Gamma, Theta, Vega)</a></li></ul></aside>
+</article>
+</main>
+<footer><p>Everything here is for education purposes only, and none of it is financial advice.</p><p><a href="https://www.youtube.com/@nexusfission">Nexus Fission on YouTube</a> &middot; <a href="https://github.com/nexusfissioncode/algo-trading">Code on GitHub</a></p></footer>
+</body>
+</html>

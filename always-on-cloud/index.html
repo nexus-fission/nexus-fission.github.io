@@ -1,0 +1,251 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>My AI trading bot runs 24/7 on a free Google Cloud server (TradingView, Claude, Alpaca) | Nexus Fission</title>
+<meta name="description" content="The TradingView alert bot from the last video, moved onto Google Cloud's always-free e2-micro: a permanent HTTPS address, keys in Secret Manager, systemd, a...">
+<link rel="canonical" href="https://nexus-fission.github.io/always-on-cloud/">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Nexus Fission">
+<meta property="og:title" content="My AI trading bot runs 24/7 on a free Google Cloud server (TradingView, Claude, Alpaca) | Nexus Fission">
+<meta property="og:description" content="The TradingView alert bot from the last video, moved onto Google Cloud's always-free e2-micro: a permanent HTTPS address, keys in Secret Manager, systemd, a...">
+<meta property="og:url" content="https://nexus-fission.github.io/always-on-cloud/">
+<meta property="og:image" content="https://nexus-fission.github.io/always-on-cloud/thumbnail.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="stylesheet" href="../style.css">
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@type": "VideoObject",
+ "name": "My AI trading bot runs 24/7 on a free Google Cloud server (TradingView, Claude, Alpaca)",
+ "description": "The TradingView alert bot from the last video, moved onto Google Cloud's always-free e2-micro: a permanent HTTPS address, keys in Secret Manager, systemd, a real alert firing after a reboot.",
+ "thumbnailUrl": [
+  "https://nexus-fission.github.io/always-on-cloud/thumbnail.jpg",
+  "https://i.ytimg.com/vi/K26jC0z6n2w/maxresdefault.jpg"
+ ],
+ "uploadDate": "2026-10-01T07:00:19Z",
+ "duration": "PT16M28S",
+ "embedUrl": "https://www.youtube.com/embed/K26jC0z6n2w",
+ "url": "https://nexus-fission.github.io/always-on-cloud/",
+ "publisher": {
+  "@type": "Organization",
+  "name": "Nexus Fission",
+  "url": "https://nexus-fission.github.io/"
+ },
+ "hasPart": [
+  {
+   "@type": "Clip",
+   "name": "Why a server",
+   "startOffset": 0,
+   "endOffset": 74,
+   "url": "https://www.youtube.com/watch?v=K26jC0z6n2w&t=0"
+  },
+  {
+   "@type": "Clip",
+   "name": "Free, if you read the fine print",
+   "startOffset": 74,
+   "endOffset": 137,
+   "url": "https://www.youtube.com/watch?v=K26jC0z6n2w&t=74"
+  },
+  {
+   "@type": "Clip",
+   "name": "The machine",
+   "startOffset": 137,
+   "endOffset": 273,
+   "url": "https://www.youtube.com/watch?v=K26jC0z6n2w&t=137"
+  },
+  {
+   "@type": "Clip",
+   "name": "Inside the machine",
+   "startOffset": 273,
+   "endOffset": 360,
+   "url": "https://www.youtube.com/watch?v=K26jC0z6n2w&t=273"
+  },
+  {
+   "@type": "Clip",
+   "name": "Secrets and systemd",
+   "startOffset": 360,
+   "endOffset": 633,
+   "url": "https://www.youtube.com/watch?v=K26jC0z6n2w&t=360"
+  },
+  {
+   "@type": "Clip",
+   "name": "A permanent address",
+   "startOffset": 633,
+   "endOffset": 737,
+   "url": "https://www.youtube.com/watch?v=K26jC0z6n2w&t=633"
+  },
+  {
+   "@type": "Clip",
+   "name": "Point TradingView at it",
+   "startOffset": 737,
+   "endOffset": 774,
+   "url": "https://www.youtube.com/watch?v=K26jC0z6n2w&t=737"
+  },
+  {
+   "@type": "Clip",
+   "name": "Proof",
+   "startOffset": 774,
+   "endOffset": 917,
+   "url": "https://www.youtube.com/watch?v=K26jC0z6n2w&t=774"
+  },
+  {
+   "@type": "Clip",
+   "name": "Turning it off",
+   "startOffset": 917,
+   "endOffset": 988,
+   "url": "https://www.youtube.com/watch?v=K26jC0z6n2w&t=917"
+  }
+ ]
+}
+</script>
+</head>
+<body>
+<header class="top"><a class="brand" href="../">Nexus Fission</a><span class="tag">Trading, made clear</span><a class="yt" href="https://www.youtube.com/@nexusfission">YouTube</a></header>
+<main class="page">
+<article>
+<p class="crumb"><a href="../">Lessons</a> / AI trading, step by step</p>
+<h1>My AI trading bot runs 24/7 on a free Google Cloud server (TradingView, Claude, Alpaca)</h1>
+<p class="meta">October 1, 2026 &middot; 16:28 video</p>
+<p class="lede">The TradingView alert bot from the last video, moved onto Google Cloud's always-free e2-micro: a permanent HTTPS address, keys in Secret Manager, systemd, a real alert firing after a reboot.</p>
+<div class="video"><iframe src="https://www.youtube-nocookie.com/embed/K26jC0z6n2w" title="My AI trading bot runs 24/7 on a free Google Cloud server (TradingView, Claude, Alpaca)" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+<p class="asof">Prices and numbers are as of the video's publication, October 1, 2026.</p>
+<p class="code">The code for this lesson: <a href="https://github.com/nexusfissioncode/algo-trading/tree/main/always-on-cloud">github.com/nexusfissioncode/algo-trading/tree/main/always-on-cloud</a></p>
+<nav class="toc"><h2>In this lesson</h2><ol><li><a href="#part-1">Why a server</a></li><li><a href="#part-2">Free, if you read the fine print</a></li><li><a href="#part-3">The machine</a></li><li><a href="#part-4">Inside the machine</a></li><li><a href="#part-5">Secrets and systemd</a></li><li><a href="#part-6">A permanent address</a></li><li><a href="#part-7">Point TradingView at it</a></li><li><a href="#part-8">Proof</a></li><li><a href="#part-9">Turning it off</a></li></ol></nav>
+<section id="part-1">
+<h2>Why a server <a class="at" href="https://www.youtube.com/watch?v=K26jC0z6n2w&amp;t=0s">Watch from 0:00</a></h2>
+<figure><img src="img/slide-01.jpg" alt="Why a server: a frame from the video" loading="lazy" width="1280" height="720"></figure>
+<p>In the last video, a TradingView alert woke Claude on my laptop, and Claude placed a paper trade or explained why it skipped. It worked, but only while the laptop was awake.</p>
+<p>Today we move that exact bot onto a free Google Cloud machine that never sleeps. A permanent web address, the keys locked away, a service that restarts itself, and a log you can read in the morning. Every command, from an empty project to a real order.</p>
+<p>Two things break the laptop version. When the lid closes, the laptop sleeps, and an alert that arrives at three in the morning knocks on a door nobody opens. And the free tunnel hands out a new random address every time it restarts, so the alert in TradingView keeps pointing at an address that no longer exists.</p>
+<p>So we give the bot a home of its own. A small machine in Google Cloud, with an address that never changes. The alert goes to that address, Caddy answers it securely, and hands it to the same receiver as before.</p>
+<p>The receiver wakes Claude, and Claude trades the paper account through the Alpaca M C P server, exactly as it did on the laptop. The code does not change at all. What changes is everything around it.</p>
+</section>
+<section id="part-2">
+<h2>Free, if you read the fine print <a class="at" href="https://www.youtube.com/watch?v=K26jC0z6n2w&amp;t=74s">Watch from 1:14</a></h2>
+<figure><img src="img/slide-03.jpg" alt="Free, if you read the fine print: a frame from the video" loading="lazy" width="1280" height="720"></figure>
+<p>First, the word free. Google Cloud has an always free tier, and it is worth reading the page itself, because free here comes with fine print. I open it from a new tab, and scroll down to Compute Engine, which is Google's name for virtual machines.</p>
+<p>You get one small machine, the E two micro. It is not preemptible, which means Google will not switch it off to make room for someone else.</p>
+<p>But only in one of three regions in the United States: Oregon, Iowa or South Carolina. Pick anywhere else and it is billed. I will use Oregon.</p>
+<p>30 gigabytes of standard disk. Standard, not the faster balanced or solid state disk, which the setup screens suggest by default.</p>
+<p>And one gigabyte a month of data going out. An alert and an answer are a few hundred bytes, so the bot will never come close.</p>
+<p>Read this line twice. The limit is counted in hours, not machines: one machine running all month uses up the whole allowance. Run two at once, and one of them is paid for.</p>
+<p>Anything not on this page, a bigger machine, a graphics card, a faster disk, is billed. So the next thing we set up is an alarm that tells us if anything ever costs money.</p>
+</section>
+<section id="part-3">
+<h2>The machine <a class="at" href="https://www.youtube.com/watch?v=K26jC0z6n2w&amp;t=137s">Watch from 2:17</a></h2>
+<figure><img src="img/slide-04.jpg" alt="The machine: a frame from the video" loading="lazy" width="1280" height="720"></figure>
+<p>Everything from here is done from the laptop's terminal with G cloud, Google's command line tool, so you can copy every command from the description. You install it from Google's install page and run G cloud init once, which signs you in and picks the project. I made a project just for this bot, so deleting it later removes everything in one go. First, a budget alert, so a mistake is an email and not a bill.</p>
+<p>Then a static address, one that never changes, which is what TradingView will send to. It is free while it is attached to a running machine. And then the machine itself.</p>
+<p>Last, a firewall rule that lets in web traffic and nothing else.</p>
+<p>I keep the project's name in a variable, so the commands after it read the same for you as for me.</p>
+<p>That is the project, just for the bot. Next I switch on the three Google services we need: Compute Engine for the machine, Secret Manager for the keys, and budgets for the alarm. A new project has them all switched off, and each takes a few seconds to switch on. Then I look up which billing account pays for this project, into a variable, without printing it on the screen.</p>
+<p>The budget: $1, for this project only, with an email at half of it and at all of it. If the machine ever starts costing money, I hear about it the same day, long before it adds up.</p>
+<p>Now the static address. Google reserves it, and I ask for it back in plain form. This is the address the whole world will use to reach the bot, and it stays the same through every restart. Then the machine itself, and every part of this command is the fine print from the free tier page. Oregon. The E two micro. Debian 12, a plain and well supported Linux. A 30 gigabyte standard disk. The static address we just made. A tag, so the firewall rule can find it. And access to Google's services, so it can read the keys from Secret Manager later.</p>
+<p>Google builds it while I wait. It warns that a small standard disk is slow, and for a bot that answers a few alerts a day, that does not matter.</p>
+<p>There is the machine type, E two micro.</p>
+<p>Running, about 20 seconds after I pressed enter, with our static address as its external address. The other address, the internal one, is only for Google's own network, and we never need it.</p>
+<p>And the firewall rule: for machines with the tag, let in ports 80 and 443, plain web and secure web. Nothing else can reach this machine from the internet.</p>
+</section>
+<section id="part-4">
+<h2>Inside the machine <a class="at" href="https://www.youtube.com/watch?v=K26jC0z6n2w&amp;t=273s">Watch from 4:33</a></h2>
+<figure><img src="img/slide-07.jpg" alt="Inside the machine: a frame from the video" loading="lazy" width="1280" height="720"></figure>
+<p>To get inside the machine, G cloud compute S S H. I log in as a user called trader, a user just for the bot, rather than as myself. The first time, G cloud makes a key for you and hands it to the machine, so there is no password to set.</p>
+<p>And we are in.</p>
+<p>The prompt now says trader at alert bot: every command from here runs on the server in Oregon, not on my laptop.</p>
+<p>This is the catch with a free machine: just under one gigabyte of memory, and no swap at all. Installing Claude Code and running it next to the Alpaca server can run out of memory, and when that happens Linux simply kills something.</p>
+<p>So I give it a spare gigabyte on the disk, a swap file, and add it to the file system table so it comes back after a reboot. Now the installs. Caddy from Debian, for the secure address. Then U V, which runs the Alpaca M C P server. Then Claude Code, with its official installer. I've sped up the waiting.</p>
+<p>The installers put their programs in a folder in trader's home, so I add that folder to the path, so the shell can find them, and then I check every version.</p>
+<p>Python came with Debian, and the receiver needs nothing else: it only uses Python's standard library.</p>
+<p>U V, which starts the Alpaca M C P server whenever Claude needs it.</p>
+<p>Claude Code, the same program you run on your laptop, now on the server.</p>
+<p>Caddy, the web server that will answer at our secure address.</p>
+<p>And G cloud, which comes with Google's Debian image. The bot will use it to fetch its keys. That is everything. I log out, back to the laptop.</p>
+</section>
+<section id="part-5">
+<h2>Secrets and systemd <a class="at" href="https://www.youtube.com/watch?v=K26jC0z6n2w&amp;t=360s">Watch from 6:00</a></h2>
+<figure><img src="img/slide-09.jpg" alt="Secrets and systemd: a frame from the video" loading="lazy" width="1280" height="720"></figure>
+<p>The server has no browser, so Claude cannot sign in the usual way there. Instead you make a sign in for it on your own computer, where Claude is already set up. In a terminal, run Claude setup token.</p>
+<p>It opens your browser at Claude's sign in page. Sign in with your Claude account if you are not already, and press authorize.</p>
+<p>Back in the terminal, it prints a long lived token that starts with S K dash ant. It uses your own Claude plan, the same as Claude on your laptop, so treat it like a password: never paste it into a file or a chat, and never into the code.</p>
+<p>Keep it in a variable instead. Read dash S reads what you paste without showing it and without saving it in the shell's history. Then export it, and it sits in this terminal's memory, next to the Alpaca keys. From there, it goes into Secret Manager with the others, as you are about to see.</p>
+<p>The bot needs four secrets: the two Alpaca keys, the Claude sign in, and the alert secret that proves an alert is yours. They must never sit in the code, in a file on the server, or in the shell's history. On my laptop they live in environment variables, and I never type them.</p>
+<p>They go into Google Secret Manager, a locked box that belongs to the project, and small enough to be free. When the bot starts, a tiny script asks Secret Manager for them, and they live only in the bot's memory.</p>
+<p>And only this machine is allowed to read them, and only to read them. The Claude sign in comes from Claude setup token, which you run once on your own computer. It signs you in through the browser and gives you a long lived token for your Claude subscription, so the server needs no browser at all. If you would rather pay per call, an Anthropic A P I key works the same way.</p>
+<p>First the project's name, into a variable, as before. Then the first secret: print the variable, with no new line after it, and pipe it straight into G cloud secrets create. The key goes from memory to Secret Manager without ever being on the screen.</p>
+<p>Created, version one. The same for the secret key, then the Claude token. The alert secret is one I choose myself, orange kite, because I will type it into TradingView later. Pick a long one of your own; this one is deleted with the project at the end.</p>
+<p>Four secrets, one place. Only the names are listed. Nobody sees the values, not even here, and every time one is read, Google writes it down in the project's audit log. If a key ever leaks, you replace it in one place, and the server picks up the new one on its next start.</p>
+<p>Last, I look up the machine's own identity, its service account, and give it one role, secret accessor. It can read these secrets, and do nothing else with them.</p>
+<p>Back on the laptop, in the bot's folder.</p>
+<p>The receiver, the rules and the M C P settings are exactly the files from the last video. Not a line changed. Next to them, three new ones for the server.</p>
+<p>The first is start dot S H. For each secret, it asks Secret Manager for the latest version and puts it in an environment variable, in memory only.</p>
+<p>Then it hands over to the receiver, the same way I started it by hand last time. I make a folder on the server, and copy all six files across with G cloud compute S C P.</p>
+<p>Here is that service file whole, because the last lines matter most. The unit section says what it is, and to wait until the network is up before starting.</p>
+<p>The service section: run as the user trader, never as root, in the bot's folder, with a path that includes where the installers put Claude and U V. And what to start: the little script that fetches the secrets and then runs the receiver.</p>
+<p>Restart always, with a five second pause. If the bot ever crashes, system D starts it again.</p>
+<p>And the install section. Wanted by the multi user target means: start it whenever the machine boots into its normal running state, before anyone logs in. This is the line that brings the bot back after a reboot.</p>
+<p>To use it, copy it into system D's folder, and enable it with dash dash now, which starts it at once and at every boot from then on.</p>
+<p>Six files on the server. Now the part that makes it always on. I read the static address back into the terminal, log in again, and open the second new file, a unit for system D. System D is the program that starts everything on a Linux machine, and a unit tells it how to run one more thing.</p>
+<p>It runs as trader, not as root, so the bot cannot touch the rest of the machine.</p>
+<p>It starts the script, in the bot's folder.</p>
+<p>If the bot ever crashes, system D waits five seconds and starts it again.</p>
+<p>And it is wanted by the normal running state of the machine, which means it starts at every boot, before anyone logs in. I copy the unit into place, and enable it now and for every boot, in one command. The script fetches the four secrets, and the receiver starts.</p>
+<p>Its log says listening. Same line as on the laptop, but now on a server that never sleeps, started by system D rather than by me.</p>
+</section>
+<section id="part-6">
+<h2>A permanent address <a class="at" href="https://www.youtube.com/watch?v=K26jC0z6n2w&amp;t=633s">Watch from 10:33</a></h2>
+<figure><img src="img/slide-15.jpg" alt="A permanent address: a frame from the video" loading="lazy" width="1280" height="720"></figure>
+<p>TradingView only sends to a secure web address, and a secure address needs a certificate, and a certificate needs a name, not just numbers. You could buy a domain. You do not have to. A free service called S slip dot I O turns any address into a name: put the numbers in front of S slip dot I O, and the name leads straight back to those numbers.</p>
+<p>Caddy is a web server that fetches a free certificate for a name all by itself, from Let's Encrypt, and renews it before it runs out. No account, no settings.</p>
+<p>Caddy answers on the secure port, and passes each alert to the receiver, which still only listens on the machine itself.</p>
+<p>Caddy is two steps. First, install it. It is a Debian package, so one apt get install does it, and it starts running as a service straight away, answering on the plain web port with a welcome page.</p>
+<p>Second, tell it what to serve. Its settings live in the Caddy file, and ours has just two lines: the name of our address, and reverse proxy to local host port 8765, which means hand everything that arrives to the receiver.</p>
+<p>Reload Caddy, and when it sees a name in that file, it gets a certificate for it from Let's Encrypt on its own, and renews it before it expires. No account, and nothing else to set up. You saw the install earlier, and here is the Caddy file going in.</p>
+<p>The third new file is the Caddy file: one name, and where to send what arrives. I fill in our address as an S slip name, put it in Caddy's place, reload Caddy, and log out. Back on the laptop, from outside, I knock on the new address with an empty alert. The first time, Caddy has to fetch its certificate, which takes a little while.</p>
+<p>401: not allowed. That is exactly right. The secure address works, the certificate is real, the alert reached the receiver, and the receiver turned it away because it carried no secret.</p>
+</section>
+<section id="part-7">
+<h2>Point TradingView at it <a class="at" href="https://www.youtube.com/watch?v=K26jC0z6n2w&amp;t=737s">Watch from 12:17</a></h2>
+<figure><img src="img/slide-18.jpg" alt="Point TradingView at it: a frame from the video" loading="lazy" width="1280" height="720"></figure>
+<p>Before pointing TradingView at it, here is TradingView's own page on webhooks, because our setup meets each of its rules, one by one.</p>
+<p>Only ports 80 and 443. That is why the firewall lets in those two, and why Caddy answers on the secure one.</p>
+<p>TradingView gives up if the answer takes longer than three seconds. Claude takes longer than that, which is why the receiver answers at once and lets Claude work afterwards.</p>
+<p>Every alert comes from one of these four addresses. If you want to go further, you could let only these through the firewall.</p>
+<p>And the alert's message is sent as the body. Written as J SON, it arrives as J SON, which is what the receiver reads.</p>
+</section>
+<section id="part-8">
+<h2>Proof <a class="at" href="https://www.youtube.com/watch?v=K26jC0z6n2w&amp;t=774s">Watch from 12:54</a></h2>
+<figure><img src="img/slide-19.jpg" alt="Proof: a frame from the video" loading="lazy" width="1280" height="720"></figure>
+<p>Now the proof. Something bad happens to every server sooner or later: Google restarts it for maintenance, or it crashes. So I restart it myself, the rudest way, with a reboot, and touch nothing afterwards.</p>
+<p>The connection drops as the machine goes down. I give it a minute to come back up on its own. I've sped up the waiting.</p>
+<p>Then I ask it two things without logging in. How long has it been up? A minute or two, so it really did restart.</p>
+<p>And are the bot and Caddy running? Both active, and nobody started them. System D did, at boot, and the bot fetched its secrets again on its own. I read the static address into the terminal for later, and in a second window I log in and follow the bot's log live, with journal control.</p>
+<p>The log shows the receiver listening, started by the reboot. Now a real alert, in TradingView.</p>
+<p>This is my own TradingView, signed in, on the bitcoin chart. The alert button opens a new alert.</p>
+<p>The condition: the price crossing this line, which TradingView sets at the price right now. For a demo that is handy, because it fires as soon as the price moves across it. For real, this is where your own condition goes: an indicator, a strategy, a level.</p>
+<p>In the message, I name the alert, and replace the text with the four fields the receiver expects. The secret, orange kite. TradingView's placeholder for the ticker. Buy. And the placeholder for the price.</p>
+<p>In notifications, I tick webhook U R L, and paste our permanent address, slash alert. Unlike the tunnel's address, this one never changes, so you set it once. Webhooks need one of TradingView's paid plans. Then create.</p>
+<p>The alert is waiting for the price to cross the line. I've sped up the wait.</p>
+<p>It fired. TradingView sent the message across the internet to our address, Caddy passed it to the receiver, and there it is, on the server in Oregon. Claude is starting, with the same short list of tools and the same page of rules as before.</p>
+<p>Claude checked the price and the positions, found nothing held, and placed a market order for $1,000 of bitcoin.</p>
+<p>Its decision, in one line: bought, because the price was close to the alert's and nothing was held yet. Now let us check with the broker.</p>
+<p>At the broker, the Alpaca dashboard for the paper account shows the order, placed by a server I was not even logged in to, because of an alert I set in TradingView a few seconds earlier.</p>
+<p>And this is what you read in the morning. Every alert and every decision is kept in the decisions log, one line each, with the time. Whatever happened overnight, it is all here.</p>
+</section>
+<section id="part-9">
+<h2>Turning it off <a class="at" href="https://www.youtube.com/watch?v=K26jC0z6n2w&amp;t=917s">Watch from 15:17</a></h2>
+<figure><img src="img/slide-23.jpg" alt="Turning it off: a frame from the video" loading="lazy" width="1280" height="720"></figure>
+<p>Last, how to turn it all off, so nothing keeps running that you forgot about. To pause the bot, stop the machine.</p>
+<p>Terminated, in Google's words, which just means stopped. A stopped machine costs nothing, though a static address that is not attached to a running machine is billed by the hour, so do not leave it like this for long.</p>
+<p>To remove everything, delete the project. The machine, its disk, the address, the firewall rule and the secrets all go with it, and nothing is left that can bill you.</p>
+<p>So that is the bot, living on its own. A permanent address, keys that never touch a file, a service that comes back by itself, and a log for the morning.</p>
+<p>What it costs: the machine, the address, the disk and the secrets sit inside the free tier, and the budget alert tells you the day that changes. Claude runs on your own Claude plan, so every alert that gets past the secret uses a little of it.</p>
+<p>Keep it on paper, and read the decisions log for a few weeks before you trust it. In the next video, we give Claude a tool of our own: your own indicator, as an M C P server Claude can call.</p>
+</section>
+<aside class="related"><h2>More lessons</h2><ul><li><a href="../agent-desk/">I split my AI trader into multi agents trader (Claude Agent SDK + Alpaca)</a></li><li><a href="../alert-to-claude/">My AI trades while I'm away: a TradingView alert wakes Claude, and it places the order (Alpaca)</a></li><li><a href="../guardrail-mcp/">I tried to talk my AI past my trading rules. Code stopped it. (Build your own MCP server)</a></li></ul></aside>
+</article>
+</main>
+<footer><p>Everything here is for education purposes only, and none of it is financial advice.</p><p><a href="https://www.youtube.com/@nexusfission">Nexus Fission on YouTube</a> &middot; <a href="https://github.com/nexusfissioncode/algo-trading">Code on GitHub</a></p></footer>
+</body>
+</html>

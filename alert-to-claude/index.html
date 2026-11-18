@@ -1,0 +1,216 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>My AI trades while I'm away: a TradingView alert wakes Claude, and it places the order (Alpaca) | Nexus Fission</title>
+<meta name="description" content="A TradingView alert wakes Claude Code on your own machine. Through the Alpaca MCP server, Claude checks the price and the account, follows your rules, and...">
+<link rel="canonical" href="https://nexus-fission.github.io/alert-to-claude/">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Nexus Fission">
+<meta property="og:title" content="My AI trades while I'm away: a TradingView alert wakes Claude, and it places the order (Alpaca) | Nexus Fission">
+<meta property="og:description" content="A TradingView alert wakes Claude Code on your own machine. Through the Alpaca MCP server, Claude checks the price and the account, follows your rules, and...">
+<meta property="og:url" content="https://nexus-fission.github.io/alert-to-claude/">
+<meta property="og:image" content="https://nexus-fission.github.io/alert-to-claude/thumbnail.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="stylesheet" href="../style.css">
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@type": "VideoObject",
+ "name": "My AI trades while I'm away: a TradingView alert wakes Claude, and it places the order (Alpaca)",
+ "description": "A TradingView alert wakes Claude Code on your own machine. Through the Alpaca MCP server, Claude checks the price and the account, follows your rules, and places a paper trade or says why it skipped. Every piece shown from nothing: the receiver, a free Cloudflare tunnel, headless Claude and the tool list that locks it down.",
+ "thumbnailUrl": [
+  "https://nexus-fission.github.io/alert-to-claude/thumbnail.jpg",
+  "https://i.ytimg.com/vi/SED4Wyf82l0/maxresdefault.jpg"
+ ],
+ "uploadDate": "2026-09-28T06:33:19Z",
+ "duration": "PT13M2S",
+ "embedUrl": "https://www.youtube.com/embed/SED4Wyf82l0",
+ "url": "https://nexus-fission.github.io/alert-to-claude/",
+ "publisher": {
+  "@type": "Organization",
+  "name": "Nexus Fission",
+  "url": "https://nexus-fission.github.io/"
+ },
+ "hasPart": [
+  {
+   "@type": "Clip",
+   "name": "What an alert sends",
+   "startOffset": 0,
+   "endOffset": 153,
+   "url": "https://www.youtube.com/watch?v=SED4Wyf82l0&t=0"
+  },
+  {
+   "@type": "Clip",
+   "name": "The plan",
+   "startOffset": 153,
+   "endOffset": 270,
+   "url": "https://www.youtube.com/watch?v=SED4Wyf82l0&t=153"
+  },
+  {
+   "@type": "Clip",
+   "name": "What you need",
+   "startOffset": 270,
+   "endOffset": 451,
+   "url": "https://www.youtube.com/watch?v=SED4Wyf82l0&t=270"
+  },
+  {
+   "@type": "Clip",
+   "name": "The receiver, line by line",
+   "startOffset": 451,
+   "endOffset": 575,
+   "url": "https://www.youtube.com/watch?v=SED4Wyf82l0&t=451"
+  },
+  {
+   "@type": "Clip",
+   "name": "The alert wakes Claude",
+   "startOffset": 575,
+   "endOffset": 683,
+   "url": "https://www.youtube.com/watch?v=SED4Wyf82l0&t=575"
+  },
+  {
+   "@type": "Clip",
+   "name": "Point TradingView at it",
+   "startOffset": 683,
+   "endOffset": 717,
+   "url": "https://www.youtube.com/watch?v=SED4Wyf82l0&t=683"
+  },
+  {
+   "@type": "Clip",
+   "name": "Before you trust it",
+   "startOffset": 717,
+   "endOffset": 782,
+   "url": "https://www.youtube.com/watch?v=SED4Wyf82l0&t=717"
+  }
+ ]
+}
+</script>
+</head>
+<body>
+<header class="top"><a class="brand" href="../">Nexus Fission</a><span class="tag">Trading, made clear</span><a class="yt" href="https://www.youtube.com/@nexusfission">YouTube</a></header>
+<main class="page">
+<article>
+<p class="crumb"><a href="../">Lessons</a> / AI trading, step by step</p>
+<h1>My AI trades while I'm away: a TradingView alert wakes Claude, and it places the order (Alpaca)</h1>
+<p class="meta">September 28, 2026 &middot; 13:02 video</p>
+<p class="lede">A TradingView alert wakes Claude Code on your own machine. Through the Alpaca MCP server, Claude checks the price and the account, follows your rules, and places a paper trade or says why it skipped. Every piece shown from nothing: the receiver, a free Cloudflare tunnel, headless Claude and the tool list that locks it down.</p>
+<div class="video"><iframe src="https://www.youtube-nocookie.com/embed/SED4Wyf82l0" title="My AI trades while I'm away: a TradingView alert wakes Claude, and it places the order (Alpaca)" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+<p class="asof">Prices and numbers are as of the video's publication, September 28, 2026.</p>
+<p class="code">The code for this lesson: <a href="https://github.com/nexusfissioncode/algo-trading/tree/main/alert-to-claude">github.com/nexusfissioncode/algo-trading/tree/main/alert-to-claude</a></p>
+<nav class="toc"><h2>In this lesson</h2><ol><li><a href="#part-1">What an alert sends</a></li><li><a href="#part-2">The plan</a></li><li><a href="#part-3">What you need</a></li><li><a href="#part-4">The receiver, line by line</a></li><li><a href="#part-5">The alert wakes Claude</a></li><li><a href="#part-6">Point TradingView at it</a></li><li><a href="#part-7">Before you trust it</a></li></ol></nav>
+<section id="part-1">
+<h2>What an alert sends <a class="at" href="https://www.youtube.com/watch?v=SED4Wyf82l0&amp;t=0s">Watch from 0:00</a></h2>
+<figure><img src="img/slide-01.jpg" alt="What an alert sends: a frame from the video" loading="lazy" width="1280" height="720"></figure>
+<p>Every automated trade you have ever heard of starts the same way. Something happens on a chart, and a moment later a program somewhere else knows about it and acts.</p>
+<p>That something is called an event, and this chapter follows one from the moment it is born to the moment it is caught, live on screen, so you can see exactly what travels between the pieces.</p>
+<p>Here is the chart where it starts. You set an alert on it, a rule like price crossing a line, and the chart watches for you so you do not have to.</p>
+<p>Pull back and there is the whole picture. The alert is the producer: it makes the event. It does not know who is listening, and it does not care.</p>
+<p>The event travels down a channel, here a webhook, which is just an address another program can knock on. On the other side, anything that listens is a consumer, and there can be as many of them as you like.</p>
+<p>So what is an event, really? When the alert fires, it writes a few lines of text: which market, what to do, and the price at that moment. This format is called Jason, and it is just labels and values that any program can read.</p>
+<p>Then it sends those lines down the webhook, and that is the whole event. No magic, no connection to your broker, just a small message delivered to an address.</p>
+<p>Let me show you on a real chart. I open a browser, go to TradingView, and pull up bitcoin against the dollar. No account needed to look at a chart, and this is live, not a screenshot.</p>
+<p>Up in the toolbar is the Alert button. That is where you would set the rule and paste the address of your webhook, so the chart knows where to send its event.</p>
+<p>Here is the other end: a receiver, a dozen lines of Python, listening on an address on my own machine. It is waiting, doing nothing, until something knocks.</p>
+<p>In a second terminal I send it exactly the message an alert would send, with a command called curl. Same address, same lines of text.</p>
+<p>And there it is, caught. The receiver prints what it got: bitcoin, and the action is buy.</p>
+<p>Then the one line that matters: what your code decides to do with it. Here it only says what it would place, because nothing trades yet. That comes next.</p>
+<p>Back to the picture. Your receiver is the consumer we just watched catch the event, and from here it can do anything it likes with it.</p>
+<p>It can pass it on to the broker as an order, write it to a log, and buzz your phone, all from the same event, all at once.</p>
+<p>That is what event driven means: one thing happens, and every listener hears about it. The alert never needed to know any of them existed.</p>
+</section>
+<section id="part-2">
+<h2>The plan <a class="at" href="https://www.youtube.com/watch?v=SED4Wyf82l0&amp;t=153s">Watch from 2:33</a></h2>
+<figure><img src="img/slide-07.jpg" alt="The plan: a frame from the video" loading="lazy" width="1280" height="720"></figure>
+<p>So far the receiver only printed what it would do. In this video it does something much more interesting. When the alert arrives, it wakes up Claude, the AI, on your own machine, with nobody at the keyboard.</p>
+<p>Claude looks at your paper account and the live price, checks your rules, and then either places the trade or tells you exactly why it did not. Every piece of it, built from nothing and run live.</p>
+<p>Here is the whole thing, one piece at a time. It starts where the last part ended: an alert on a chart, sent as a small message to an address.</p>
+<p>That address has to be on the public internet, and your laptop is not. So a tunnel gives your laptop a public address, and passes every message through to the receiver running inside your own machine.</p>
+<p>The receiver checks the message is really yours, and then starts Claude Code, headless. Headless means no chat window and nobody typing: one question in, one answer out.</p>
+<p>Claude reaches your broker through the Alpaca M C P server, the same one from the last video, and places the order in a paper account. Paper means pretend money, so nothing you learn here can cost you anything.</p>
+<p>Why put Claude in the middle at all? A plain script does exactly what the alert says. If the alert says buy, it buys. If the alert fires twice by mistake, it buys twice.</p>
+<p>Claude reads the situation first. Am I already holding this? Is the price in the alert still the price now? Does this trade fit the rules I was given? Then it decides, and it writes down why, in plain English, every time.</p>
+<p>The tunnel is the one piece people usually get stuck on, so let us look closer. Cloudflare, the company that runs a big slice of the internet, gives away a free quick tunnel. You start one program, and it hands you a random public web address like this one.</p>
+<p>Anything sent to that address travels down the tunnel to your laptop. Your laptop never opens a door to the internet: the tunnel program reaches out, and the messages come back along it.</p>
+<p>At the far end it knocks on the receiver, which only listens on your own machine, on one port. Nothing else on your laptop is reachable.</p>
+</section>
+<section id="part-3">
+<h2>What you need <a class="at" href="https://www.youtube.com/watch?v=SED4Wyf82l0&amp;t=270s">Watch from 4:30</a></h2>
+<figure><img src="img/slide-11.jpg" alt="What you need: a frame from the video" loading="lazy" width="1280" height="720"></figure>
+<p>Here is everything you need. Claude Code, which is Claude running in a terminal. An Alpaca paper account. A small tool called uv, which runs the Alpaca M C P server. Cloudflare's tunnel program, called cloudflared. Python, which every Mac already has. And TradingView, for the alert.</p>
+<p>The Alpaca paper account, uv, cloudflared and Python are all free.</p>
+<p>Two of them need a plan. Claude Code needs a Claude subscription or A P I credits, and every alert uses a little of it. And TradingView only sends alerts to a web address on a paid plan. If you are not ready to pay for that, you can still build and test everything else, exactly the way I do in this video.</p>
+<p>Let me check all of that on a real machine. I open a terminal in an empty folder for the bot, and first ask Claude Code which version it is.</p>
+<p>There it is: Claude Code is installed, and answering.</p>
+<p>Next, uv. It answers with its version too, so the Alpaca server will be able to start.</p>
+<p>Now the tunnel program. You could use Homebrew, but Cloudflare also publishes it ready to run, so I download it straight from their releases page with curl, and unpack it. On an Apple silicon Mac, the file name ends in arm 64 instead.</p>
+<p>I ask it for its version, and cloudflared is ready. No account, no sign up.</p>
+<p>If your terminal did not answer like that, here is how to get each piece. This one line installs Claude Code. Paste it, press enter, then type claude once and sign in with your Claude account in the browser. The last video walks through that sign in step by step.</p>
+<p>uv comes from this second line. It is a tool that downloads a Python program and runs it in one go, which is exactly how the Alpaca server gets started, so there is nothing else to install for it.</p>
+<p>And M C P, the model context protocol, is simply a plug. A program on one side offers tools, like get my positions or place an order, and Claude on the other side can call them. The Alpaca M C P server is that program for your broker.</p>
+<p>The whole bot is four files, and three of them are mine. The M C P settings, the receiver, and the rules. Let us open the M C P settings first.</p>
+<p>It says how to start the Alpaca server: with uvx, the run it once part of uv, and the name of the server.</p>
+<p>And here is the important part. The keys are not in the file. The file only names two environment variables, and Claude fills them in from the terminal when it starts. So this file is safe to share, and your keys never sit on disk next to your code.</p>
+<p>One more line says paper trading, true. This bot can only ever touch pretend money.</p>
+<p>Now the rules, in plain English, because Claude reads English. The first one: only ever trade bitcoin against the dollar.</p>
+<p>If the price in the alert is more than 3% away from the live price, the alert is stale, so skip it.</p>
+<p>If the account already holds bitcoin, do not buy more. Never double up.</p>
+<p>Otherwise, buy $1,000 worth, with a market order, which means buy now at whatever the price is.</p>
+<p>And finish with one line that starts with decision: bought, sold or skipped, and why. That single line is what you will read later, to see what your bot did while you were away.</p>
+</section>
+<section id="part-4">
+<h2>The receiver, line by line <a class="at" href="https://www.youtube.com/watch?v=SED4Wyf82l0&amp;t=451s">Watch from 7:31</a></h2>
+<figure><img src="img/slide-16.jpg" alt="The receiver, line by line: a frame from the video" loading="lazy" width="1280" height="720"></figure>
+<p>Now the receiver, the one file that joins it all together. It is plain Python with nothing to install. When a message arrives, it reads the Jason out of it.</p>
+<p>First it checks a secret. Your tunnel address is public, so anyone who found it could send you an alert. The secret is a word you choose, kept in an environment variable and put inside your TradingView message. No secret, no Claude: the message is thrown away before anything costs you a penny.</p>
+<p>Then it answers straight away with an okay, and drops the alert into a queue. That matters, because TradingView only waits a few seconds for an answer, and Claude takes longer than that to think.</p>
+<p>A worker takes alerts off the queue one at a time, in order, and hands each to Claude. One at a time, so two alerts arriving together can never both buy before either has checked the account.</p>
+<p>This is the heart of it: how the receiver starts Claude. Dash p means print mode. Claude gets one prompt, here the alert itself, does the work, prints the answer and exits. No chat, no one watching.</p>
+<p>These two lines load the Alpaca server from the settings file we just saw, and strict means only that server. Whatever else you have connected to Claude on this machine is left out.</p>
+<p>These three are the safety catch. No built in tools at all, so no shell and no files. Then a short list of allowed tools: read the account, the positions and the price, place a crypto order, and close a position. And don't ask mode: anything not on that list is simply refused, because there is nobody here to say yes.</p>
+<p>The rules file is added to Claude's instructions, so it follows them on every alert.</p>
+<p>And stream Jason means Claude reports each step as it takes it, so the receiver can print every tool call and every answer the moment it happens. That is the log you will watch in a minute.</p>
+<p>There are two kinds of safety here, and they are not the same. The rules are advice. Claude is very good at following them, but they are words, and words can be misread.</p>
+<p>The tool list is a lock. It is enforced by Claude Code itself, not by Claude's judgement. If place an order for shares is not on the list, it cannot happen, however the alert is worded.</p>
+<p>So put the hard limits in the list, the preferences in the rules, and keep the account on paper until you have watched it make 100 decisions you agree with.</p>
+</section>
+<section id="part-5">
+<h2>The alert wakes Claude <a class="at" href="https://www.youtube.com/watch?v=SED4Wyf82l0&amp;t=575s">Watch from 9:35</a></h2>
+<figure><img src="img/slide-19.jpg" alt="The alert wakes Claude: a frame from the video" loading="lazy" width="1280" height="720"></figure>
+<p>Time to run it for real. In the first terminal I set the secret, orange kite, as an environment variable, and start the receiver. The Alpaca keys are already in this terminal's environment, set before I started recording.</p>
+<p>It is listening, on my own machine only.</p>
+<p>In a second terminal I start the tunnel, pointed at the receiver's port. Cloudflared prints a lot, so I keep only the line with the address.</p>
+<p>And there is my public address, made up of four random words. It can take up to a minute before the rest of the internet can find a brand new address, so I wait, and I've sped up the waiting.</p>
+<p>In a third terminal I send exactly what TradingView would send, to the public address, not to localhost. The secret, bitcoin, buy, and the price right now.</p>
+<p>It went out across the internet, back down the tunnel, and the receiver has it. Claude is starting.</p>
+<p>Watch the log. Claude asked Alpaca for the latest bitcoin trade, then for the positions, and found none. So it places a market order: bitcoin against the dollar, buy, $1,000' worth.</p>
+<p>And its decision, in one line: bought, a fresh buy alert and no position held. A little over ten seconds from alert to order.</p>
+<p>Here is the same order at the broker, on the Alpaca dashboard for the paper account. The newest order is bitcoin, a market buy, already filled. Nothing about it is simulated on my side: Alpaca really received it and filled it at the live price.</p>
+<p>Now the mistake a plain script would make. I send the very same alert again, as if TradingView had fired twice. Claude checks the price, checks the positions, and this time finds the bitcoin it just bought.</p>
+<p>So it skips, and says why: already holding, never double up. No order was sent at all.</p>
+<p>Last, someone who found the address and guesses at the secret.</p>
+<p>Rejected at the door. Claude was never woken, so it did not cost a thing, and nothing reached the account.</p>
+</section>
+<section id="part-6">
+<h2>Point TradingView at it <a class="at" href="https://www.youtube.com/watch?v=SED4Wyf82l0&amp;t=683s">Watch from 11:23</a></h2>
+<figure><img src="img/slide-24.jpg" alt="Point TradingView at it: a frame from the video" loading="lazy" width="1280" height="720"></figure>
+<p>To make a real TradingView alert do all of this, open the alert's settings and turn on the webhook. Paste your tunnel address, with slash alert on the end.</p>
+<p>In the message box, write the same Jason I sent by hand, with TradingView's placeholders in the gaps. Double curly brackets ticker becomes the symbol, strategy order action becomes buy or sell, and close becomes the price when the alert fired. Your secret goes in as plain text.</p>
+<p>One catch with quick tunnels: every time you start one, you get a new random address, so you would paste it into the alert again. A permanent address is exactly what the next video fixes.</p>
+</section>
+<section id="part-7">
+<h2>Before you trust it <a class="at" href="https://www.youtube.com/watch?v=SED4Wyf82l0&amp;t=717s">Watch from 11:57</a></h2>
+<figure><img src="img/slide-25.jpg" alt="Before you trust it: a frame from the video" loading="lazy" width="1280" height="720"></figure>
+<p>Before you trust this with anything, four things. First, it runs on your laptop. Close the lid, or let it sleep, and the tunnel and the receiver sleep with it, and any alert in the meantime is simply lost.</p>
+<p>Second, Claude takes seconds to decide, around ten in this run. That is fine for swing trades and daily signals. It is not for scalping, where a few seconds is the whole trade.</p>
+<p>Third, every alert that gets past the secret spends a little of your Claude usage, so a noisy alert that fires every minute will add up.</p>
+<p>And fourth, stay on paper, for weeks. Read the decision log every day, and only when you agree with every line should you even think about real money.</p>
+<p>That is the bot: an alert, a tunnel, a receiver, and Claude with a short list of tools and a page of rules, deciding on its own and writing down why.</p>
+<p>In the next video we lift this whole box off your laptop and onto a free Google Cloud machine, with a permanent address, so it keeps catching alerts all night while your laptop is closed. See you there.</p>
+</section>
+<aside class="related"><h2>More lessons</h2><ul><li><a href="../agent-desk/">I split my AI trader into multi agents trader (Claude Agent SDK + Alpaca)</a></li><li><a href="../always-on-cloud/">My AI trading bot runs 24/7 on a free Google Cloud server (TradingView, Claude, Alpaca)</a></li><li><a href="../guardrail-mcp/">I tried to talk my AI past my trading rules. Code stopped it. (Build your own MCP server)</a></li></ul></aside>
+</article>
+</main>
+<footer><p>Everything here is for education purposes only, and none of it is financial advice.</p><p><a href="https://www.youtube.com/@nexusfission">Nexus Fission on YouTube</a> &middot; <a href="https://github.com/nexusfissioncode/algo-trading">Code on GitHub</a></p></footer>
+</body>
+</html>

@@ -1,0 +1,246 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Backtesting Options: 4 Mistakes That Fool You, and What to Check (Python, Alpaca) | Nexus Fission</title>
+<meta name="description" content="How to backtest an options strategy without fooling yourself: four common mistakes (missing days, looking ahead, forgetting costs and keeping the best of...">
+<link rel="canonical" href="https://nexus-fission.github.io/backtest-honest/">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Nexus Fission">
+<meta property="og:title" content="Backtesting Options: 4 Mistakes That Fool You, and What to Check (Python, Alpaca) | Nexus Fission">
+<meta property="og:description" content="How to backtest an options strategy without fooling yourself: four common mistakes (missing days, looking ahead, forgetting costs and keeping the best of...">
+<meta property="og:url" content="https://nexus-fission.github.io/backtest-honest/">
+<meta property="og:image" content="https://nexus-fission.github.io/backtest-honest/thumbnail.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="stylesheet" href="../style.css">
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@type": "VideoObject",
+ "name": "Backtesting Options: 4 Mistakes That Fool You, and What to Check (Python, Alpaca)",
+ "description": "How to backtest an options strategy without fooling yourself: four common mistakes (missing days, looking ahead, forgetting costs and keeping the best of many tries), each shown on real data since February 2024, with what to check for each. For education only, not financial advice.",
+ "thumbnailUrl": [
+  "https://nexus-fission.github.io/backtest-honest/thumbnail.jpg",
+  "https://i.ytimg.com/vi/8UDJ1mHzGQk/maxresdefault.jpg"
+ ],
+ "uploadDate": "2026-11-14T08:00:15Z",
+ "duration": "PT11M50S",
+ "embedUrl": "https://www.youtube.com/embed/8UDJ1mHzGQk",
+ "url": "https://nexus-fission.github.io/backtest-honest/",
+ "publisher": {
+  "@type": "Organization",
+  "name": "Nexus Fission",
+  "url": "https://nexus-fission.github.io/"
+ },
+ "hasPart": [
+  {
+   "@type": "Clip",
+   "name": "What a backtest is",
+   "startOffset": 46,
+   "endOffset": 102,
+   "url": "https://www.youtube.com/watch?v=8UDJ1mHzGQk&t=46"
+  },
+  {
+   "@type": "Clip",
+   "name": "Run one yourself",
+   "startOffset": 102,
+   "endOffset": 205,
+   "url": "https://www.youtube.com/watch?v=8UDJ1mHzGQk&t=102"
+  },
+  {
+   "@type": "Clip",
+   "name": "Mistake 1: missing days",
+   "startOffset": 205,
+   "endOffset": 235,
+   "url": "https://www.youtube.com/watch?v=8UDJ1mHzGQk&t=205"
+  },
+  {
+   "@type": "Clip",
+   "name": "Mistake 2: looking ahead",
+   "startOffset": 235,
+   "endOffset": 345,
+   "url": "https://www.youtube.com/watch?v=8UDJ1mHzGQk&t=235"
+  },
+  {
+   "@type": "Clip",
+   "name": "Mistake 3: forgetting costs",
+   "startOffset": 345,
+   "endOffset": 448,
+   "url": "https://www.youtube.com/watch?v=8UDJ1mHzGQk&t=345"
+  },
+  {
+   "@type": "Clip",
+   "name": "Mistake 4: the best of many",
+   "startOffset": 448,
+   "endOffset": 602,
+   "url": "https://www.youtube.com/watch?v=8UDJ1mHzGQk&t=448"
+  },
+  {
+   "@type": "Clip",
+   "name": "Your checklist",
+   "startOffset": 602,
+   "endOffset": 656,
+   "url": "https://www.youtube.com/watch?v=8UDJ1mHzGQk&t=602"
+  },
+  {
+   "@type": "Clip",
+   "name": "Limits and the code",
+   "startOffset": 656,
+   "endOffset": 710,
+   "url": "https://www.youtube.com/watch?v=8UDJ1mHzGQk&t=656"
+  }
+ ]
+}
+</script>
+</head>
+<body>
+<header class="top"><a class="brand" href="../">Nexus Fission</a><span class="tag">Trading, made clear</span><a class="yt" href="https://www.youtube.com/@nexusfission">YouTube</a></header>
+<main class="page">
+<article>
+<p class="crumb"><a href="../">Lessons</a> / Options, earnings and volatility</p>
+<h1>Backtesting Options: 4 Mistakes That Fool You, and What to Check (Python, Alpaca)</h1>
+<p class="meta">November 14, 2026 &middot; 11:50 video</p>
+<p class="lede">How to backtest an options strategy without fooling yourself: four common mistakes (missing days, looking ahead, forgetting costs and keeping the best of many tries), each shown on real data since February 2024, with what to check for each. For education only, not financial advice.</p>
+<div class="video"><iframe src="https://www.youtube-nocookie.com/embed/8UDJ1mHzGQk" title="Backtesting Options: 4 Mistakes That Fool You, and What to Check (Python, Alpaca)" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+<p class="asof">Prices and numbers are as of the video's publication, November 14, 2026.</p>
+<p class="code">The code for this lesson: <a href="https://github.com/nexusfissioncode/algo-trading/tree/main/backtest">github.com/nexusfissioncode/algo-trading/tree/main/backtest</a></p>
+<nav class="toc"><h2>In this lesson</h2><ol><li><a href="#part-1">What a backtest is</a></li><li><a href="#part-2">Run one yourself</a></li><li><a href="#part-3">Mistake 1: missing days</a></li><li><a href="#part-4">Mistake 2: looking ahead</a></li><li><a href="#part-5">Mistake 3: forgetting costs</a></li><li><a href="#part-6">Mistake 4: the best of many</a></li><li><a href="#part-7">Your checklist</a></li><li><a href="#part-8">Limits and the code</a></li></ol></nav>
+<section id="part-1">
+<h2>What a backtest is <a class="at" href="https://www.youtube.com/watch?v=8UDJ1mHzGQk&amp;t=46s">Watch from 0:46</a></h2>
+<figure><img src="img/slide-03.jpg" alt="What a backtest is: a frame from the video" loading="lazy" width="1280" height="720"></figure>
+<p>First, what a backtest is. You take a trading idea, and replay the past through it, as if you had traded it back then.</p>
+<p>We will use the iron condor bot from the last video. Its settings are placeholders. This video is not about whether iron condors work. It is about how to test any idea without fooling yourself.</p>
+<p>For one day, the bot sees the morning one bar at a time, just as it happened. It opens a trade, and closes it when its rules say so.</p>
+<p>Then you do the same for every trading day. Here, that is 690 days, since February 2024.</p>
+<p>Three words you will hear a lot. In sample means the days you used to choose your settings.</p>
+<p>Out of sample means the days your settings have never seen. Only those tell you anything about the future.</p>
+<p>And cost means what you pay each time you buy or sell. A backtest has to guess it.</p>
+</section>
+<section id="part-2">
+<h2>Run one yourself <a class="at" href="https://www.youtube.com/watch?v=8UDJ1mHzGQk&amp;t=102s">Watch from 1:42</a></h2>
+<figure><img src="img/slide-06.jpg" alt="Run one yourself: a frame from the video" loading="lazy" width="1280" height="720"></figure>
+<p>Here is the project folder.</p>
+<p>This is the backtest program. It runs everything.</p>
+<p>These are the bot's own files, copied as they are, so the backtest runs the exact code that trades.</p>
+<p>One command reads the project file and installs every package it needs, in a few seconds.</p>
+<p>And your paper trading keys go in the environment. Here they only read market data.</p>
+<p>Next, download the prices. For every day, the program saves SPY's price as one bar every 60 seconds, and the same for the options that expire that day.</p>
+<p>Each bar holds the open, high, low and close of those 60 seconds. Alpaca's free data has these for options since February 2024.</p>
+<p>The download fetches one day after another, so it takes a while.</p>
+<p>690 trading days, counted as they arrive.</p>
+<p>Look at this line. On the tenth of March 2025, the free stock feed has no bars at all. So the program switches to the whole market's feed for that day, instead of losing it. Keep that in mind.</p>
+<p>Everything is saved on this computer, so every run after this needs no network.</p>
+<p>Now one run: the bot with its settings as they shipped, on every day, paying nothing to trade.</p>
+<p>The bot runs on every day we saved.</p>
+<p>681 days with a trade, and nine with none.</p>
+<p>This line shows how each trade ended. 355 hit the profit target, about half.</p>
+<p>And the total: $172 down, before paying anything to trade.</p>
+<p>As a chart, one trade a day: it climbs through the first half, then gives it all back.</p>
+<p>That is our first number. Now, the four ways a number like this can fool you.</p>
+</section>
+<section id="part-3">
+<h2>Mistake 1: missing days <a class="at" href="https://www.youtube.com/watch?v=8UDJ1mHzGQk&amp;t=205s">Watch from 3:25</a></h2>
+<figure><img src="img/slide-12.jpg" alt="Mistake 1: missing days: a frame from the video" loading="lazy" width="1280" height="720"></figure>
+<p>Mistake one is missing days. Here is every trading day, one bar each. If some days go missing, the result changes, and nothing warns you.</p>
+<p>Remember the tenth of March 2025? The free feed had no bars for it. Code that simply skips a day like that drops a trade without a word.</p>
+<p class="check">Check: count the days. Days with a trade, plus days with none, should equal the trading days. Here, 681 plus nine makes 690.</p>
+</section>
+<section id="part-4">
+<h2>Mistake 2: looking ahead <a class="at" href="https://www.youtube.com/watch?v=8UDJ1mHzGQk&amp;t=235s">Watch from 3:55</a></h2>
+<figure><img src="img/slide-13.jpg" alt="Mistake 2: looking ahead: a frame from the video" loading="lazy" width="1280" height="720"></figure>
+<p>Mistake two is looking ahead. That means the code uses something it could not have known at the time.</p>
+<p>Say the bot decides at ten o'clock. It may use everything up to ten, and nothing after.</p>
+<p>Now take a rule like, skip the wild days. But you only know how wild a day was once it has closed. So that rule peeks at the future.</p>
+<p>Let's test it. Here is the bot on every day, paying half a cent each time it buys or sells.</p>
+<p>$2,896 down.</p>
+<p>Now skip the wildest days, judged by each day's full range.</p>
+<p>Suddenly it makes $1,684.</p>
+<p>Now the same rule, using only what is known at ten: the first half hour.</p>
+<p>$1,900 down. The rule was never good. The gain came from peeking.</p>
+<p>On a chart, peeking is easy to miss. It just looks like a great rule.</p>
+<p>Judged at the close, the line climbs.</p>
+<p>Judged at ten, it sinks with the rest. So when a rule looks too good, ask: at what time did it know this?</p>
+<p>Peeking can also hide in the data itself. Each price bar is labelled with its starting time. So the ten o'clock bar is only complete at 10:01.</p>
+<p>Our own replay used that bar at ten. So it saw 60 seconds into the future.</p>
+<p>Here is the proof. On the 20 ninth of October, the bot made a real paper trade. It saw SPY at 769.68, and sold these strikes.</p>
+<p>The fixed replay sees exactly the same.</p>
+<p>The old replay, 60 seconds ahead, saw a different price and sold different strikes. We fixed it with one line, and added a test so it cannot come back.</p>
+<p class="check">Check: for every number your rules use, ask when it was known. And test that no bar is used before it ends.</p>
+</section>
+<section id="part-5">
+<h2>Mistake 3: forgetting costs <a class="at" href="https://www.youtube.com/watch?v=8UDJ1mHzGQk&amp;t=345s">Watch from 5:45</a></h2>
+<figure><img src="img/slide-18.jpg" alt="Mistake 3: forgetting costs: a frame from the video" loading="lazy" width="1280" height="720"></figure>
+<p>Mistake three is forgetting what trading costs. Every option has two prices. The bid is what buyers will pay. The ask is what sellers want. The mid is half way between.</p>
+<p>A backtest is tempted to trade at the mid. Real trades often do worse. An iron condor is four options, so opening and closing it takes eight trades.</p>
+<p>Pay just one cent worse than the mid on each, and that is $8 a condor. The average credit was $78, so one cent eats about a tenth of it.</p>
+<p>So what would each trade really have cost? Alpaca's free data has price bars and every trade, for options since February 2024.</p>
+<p>But it has no past bids and asks. So with free data, nobody can look up what a fill cost on a past day.</p>
+<p>Some providers have more data, including the bids and asks of past days: Databento, ThetaData, and Cboe's DataShop. Everything in this video uses only Alpaca's free data.</p>
+<p>One options data company puts it plainly: a backtest that assumes mid-price fills is fantasy.</p>
+<p>We cannot know the real cost. So we try a range of costs, and see where the idea stops working.</p>
+<p>At no cost, $172 down.</p>
+<p>At one cent per fill, 5620 down.</p>
+<p>At three cents, more than 16,500 down.</p>
+<p>These settings lose money even before any cost.</p>
+<p>On the chart, every cent pulls the line further down. Every trade pays it, win or lose.</p>
+<p class="check">Check: run your backtest at several costs, and find the cost where it stops making money. If it only works at the mid, it does not work.</p>
+</section>
+<section id="part-6">
+<h2>Mistake 4: the best of many <a class="at" href="https://www.youtube.com/watch?v=8UDJ1mHzGQk&amp;t=448s">Watch from 7:28</a></h2>
+<figure><img src="img/slide-22.jpg" alt="Mistake 4: the best of many: a frame from the video" loading="lazy" width="1280" height="720"></figure>
+<p>Mistake four catches careful people. The bot has six settings, like when to take profit, where to stop, and what time to enter.</p>
+<p>Try a few values of each, and you get 2400 combinations. Each square here is one: green if it made money up to June 2025, red if it lost.</p>
+<p>The values to try are listed in one file.</p>
+<p>The program tries every combination of them.</p>
+<p>All 2400, over every day. This takes a while.</p>
+<p>The best one, chosen on the days up to June 2025, made</p>
+<p>$3,421. On the days after, it lost 349.</p>
+<p>The top 20 did worse, on average, than an ordinary setting from the middle.</p>
+<p>And among 2400 coin flips, pure chance, the best one looks almost as good.</p>
+<p>Here are all 2400 as a landscape. The higher the ground, the more that setting made, up to June 2025.</p>
+<p>The winner stands on the highest peak.</p>
+<p>Now the ground changes to the days after June 2025. The peak sinks, and other hills rise where nothing was before.</p>
+<p>Here are the same squares. The red box is the winner.</p>
+<p>Now colour them by the days after. 81% made money while they were being chosen. Only 57% made money afterwards.</p>
+<p>When you try many settings, the best one is part skill and part luck. The luck does not repeat.</p>
+<p>So how do you check? First, look at the neighbours: the settings one step away. If an idea is real, a small change should not break it.</p>
+<p>The winner's neighbours all made money in the first period. In the next, they ranged from $1,061 down to 160 up. A real edge would not fall apart like that.</p>
+<p>Second, walk forward. Choose the best setting using 12 months. Then trade it on the next six, which it has never seen. Then move along, and do it again.</p>
+<p>Four rounds. Each winner made thousands in the months it was chosen on, and lost money in the months after.</p>
+<p>In total, walking forward lost $3,365.</p>
+<p>On the time line, each round chooses only from the past, then trades days it has never seen.</p>
+<p>Every round picked a different winner, and every round lost money afterwards. That is what luck looks like.</p>
+<p class="check">Check: always keep days your settings never saw. Say how many settings you tried. And look at the neighbours, not just the winner.</p>
+</section>
+<section id="part-7">
+<h2>Your checklist <a class="at" href="https://www.youtube.com/watch?v=8UDJ1mHzGQk&amp;t=602s">Watch from 10:02</a></h2>
+<figure><img src="img/slide-29.jpg" alt="Your checklist: a frame from the video" loading="lazy" width="1280" height="720"></figure>
+<p>So here is your checklist. Ask it of any backtest, yours or anyone else's.</p>
+<p>One: are all the days there? Count them against the calendar. Two: did the rules only use what was known at the time?</p>
+<p>Three: does it still work after costs, and at what cost does it stop? Four: how many settings were tried, and does it hold on days it never saw?</p>
+<p>Our program prints the answers on one screen, for the bot's own settings.</p>
+<p>Every day is counted, including the days with no trade, and none are left out.</p>
+<p>How many settings were tried to find these numbers.</p>
+<p>The result at a range of costs, from nothing to one cent per fill.</p>
+<p>Each half on its own: a gain in the first, a loss in the second.</p>
+<p>What the settings next door made, one step either way.</p>
+<p>What walking forward made, choosing only on the past, round after round.</p>
+<p>And last, honestly, what it could not test with the free data it had.</p>
+</section>
+<section id="part-8">
+<h2>Limits and the code <a class="at" href="https://www.youtube.com/watch?v=8UDJ1mHzGQk&amp;t=656s">Watch from 10:56</a></h2>
+<figure><img src="img/slide-31.jpg" alt="Limits and the code: a frame from the video" loading="lazy" width="1280" height="720"></figure>
+<p>A clean report still has limits. This is under three years, of one market.</p>
+<p>It checks the price every 60 seconds, while the live bot checks every ten. And real spreads are widest exactly when you most need to get out.</p>
+<p>And paper trading checks that the code works. It cannot tell you what real fills cost.</p>
+<p>The code is on GitHub: the backtest, the bot's own files, and every test. Point it at your own strategy, and run the checklist before you trust any number.</p>
+<p>When you share a result, share how many settings you tried, and what costs you used.</p>
+<p>This is for education only, and not financial advice. It is about how to test an idea honestly, not whether this one makes money.</p>
+</section>
+<aside class="related"><h2>More lessons</h2><ul><li><a href="../earnings-move/">How to Calculate a Stock's Expected Move Before Earnings (NVIDIA Example)</a></li><li><a href="../iron-condor-bot/">0DTE Iron Condor Bot in Python: Strikes, Exits and a Stop Your Broker Won't Hold (Alpaca)</a></li><li><a href="../options-explained/">Options Explained Simply: Calls, Puts and the Greeks in One Picture (Delta, Gamma, Theta, Vega)</a></li></ul></aside>
+</article>
+</main>
+<footer><p>Everything here is for education purposes only, and none of it is financial advice.</p><p><a href="https://www.youtube.com/@nexusfission">Nexus Fission on YouTube</a> &middot; <a href="https://github.com/nexusfissioncode/algo-trading">Code on GitHub</a></p></footer>
+</body>
+</html>

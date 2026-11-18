@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Zero-code algorithmic trading using alpaca MCP | Nexus Fission</title>
+<meta name="description" content="I gave Claude a trading rule in one English sentence - buy $200 of bitcoin if it is above its twenty-day average - and it placed the order on a real broker,...">
+<link rel="canonical" href="https://nexus-fission.github.io/zero-code-trading/">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Nexus Fission">
+<meta property="og:title" content="Zero-code algorithmic trading using alpaca MCP | Nexus Fission">
+<meta property="og:description" content="I gave Claude a trading rule in one English sentence - buy $200 of bitcoin if it is above its twenty-day average - and it placed the order on a real broker,...">
+<meta property="og:url" content="https://nexus-fission.github.io/zero-code-trading/">
+<meta property="og:image" content="https://nexus-fission.github.io/zero-code-trading/thumbnail.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="stylesheet" href="../style.css">
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@type": "VideoObject",
+ "name": "Zero-code algorithmic trading using alpaca MCP",
+ "description": "I gave Claude a trading rule in one English sentence - buy $200 of bitcoin if it is above its twenty-day average - and it placed the order on a real broker, on a paper account, with no code written at all. The whole thing is on camera: creating the Alpaca paper account, finding the API keys, installing Claude Code, keeping the keys in a file instead of a command, connecting Alpaca's MCP server, and then the trade itself - the tools it can reach, the numbers it works out, the permission prompt it has to get past, the fill, and the stop-loss afterwards. Every step is written out below, so you can follow along.",
+ "thumbnailUrl": [
+  "https://nexus-fission.github.io/zero-code-trading/thumbnail.jpg",
+  "https://i.ytimg.com/vi/EYmt8iX31ao/maxresdefault.jpg"
+ ],
+ "uploadDate": "2026-09-25T05:40:03Z",
+ "duration": "PT8M30S",
+ "embedUrl": "https://www.youtube.com/embed/EYmt8iX31ao",
+ "url": "https://nexus-fission.github.io/zero-code-trading/",
+ "publisher": {
+  "@type": "Organization",
+  "name": "Nexus Fission",
+  "url": "https://nexus-fission.github.io/"
+ },
+ "hasPart": [
+  {
+   "@type": "Clip",
+   "name": "The shift",
+   "startOffset": 0,
+   "endOffset": 80,
+   "url": "https://www.youtube.com/watch?v=EYmt8iX31ao&t=0"
+  },
+  {
+   "@type": "Clip",
+   "name": "Setting it up",
+   "startOffset": 80,
+   "endOffset": 292,
+   "url": "https://www.youtube.com/watch?v=EYmt8iX31ao&t=80"
+  },
+  {
+   "@type": "Clip",
+   "name": "Trading live",
+   "startOffset": 292,
+   "endOffset": 432,
+   "url": "https://www.youtube.com/watch?v=EYmt8iX31ao&t=292"
+  },
+  {
+   "@type": "Clip",
+   "name": "Verdict",
+   "startOffset": 432,
+   "endOffset": 510,
+   "url": "https://www.youtube.com/watch?v=EYmt8iX31ao&t=432"
+  }
+ ]
+}
+</script>
+</head>
+<body>
+<header class="top"><a class="brand" href="../">Nexus Fission</a><span class="tag">Trading, made clear</span><a class="yt" href="https://www.youtube.com/@nexusfission">YouTube</a></header>
+<main class="page">
+<article>
+<p class="crumb"><a href="../">Lessons</a> / AI trading, step by step</p>
+<h1>Zero-code algorithmic trading using alpaca MCP</h1>
+<p class="meta">September 25, 2026 &middot; 8:30 video</p>
+<p class="lede">I gave Claude a trading rule in one English sentence - buy $200 of bitcoin if it is above its twenty-day average - and it placed the order on a real broker, on a paper account, with no code written at all. The whole thing is on camera: creating the Alpaca paper account, finding the API keys, installing Claude Code, keeping the keys in a file instead of a command, connecting Alpaca's MCP server, and then the trade itself - the tools it can reach, the numbers it works out, the permission prompt it has to get past, the fill, and the stop-loss afterwards. Every step is written out below, so you can follow along.</p>
+<div class="video"><iframe src="https://www.youtube-nocookie.com/embed/EYmt8iX31ao" title="Zero-code algorithmic trading using alpaca MCP" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+<p class="asof">Prices and numbers are as of the video's publication, September 25, 2026.</p>
+<nav class="toc"><h2>In this lesson</h2><ol><li><a href="#part-1">The shift</a></li><li><a href="#part-2">Setting it up</a></li><li><a href="#part-3">Trading live</a></li><li><a href="#part-4">Verdict</a></li></ol></nav>
+<section id="part-1">
+<h2>The shift <a class="at" href="https://www.youtube.com/watch?v=EYmt8iX31ao&amp;t=0s">Watch from 0:00</a></h2>
+<figure><img src="img/slide-01.jpg" alt="The shift: a frame from the video" loading="lazy" width="1280" height="720"></figure>
+<p>This is a trading account, and this is the only thing I am going to write to place a trade in it. One sentence, in plain English.</p>
+<p>No webhook, no Python, no server to keep alive. 30 seconds from typing that to a filled order, and everything you are about to see was recorded as it happened, on a paper account with no real money in it.</p>
+<p>On this channel I have built the other way many times. Automating a trade meant writing it: a strategy in Python, line after line, before anything could happen at all.</p>
+<p>Then a server to keep it alive, and the broker's API on the far side of it, with its own keys and its own rules.</p>
+<p>Five things to build and keep running, and something has to notice when one of them falls over at three in the morning. That is the part nobody films.</p>
+<p>Here is the whole idea. Between you and your broker sits a small program called an MCP server, which Alpaca publishes.</p>
+<p>You talk to Claude. Claude talks to that server. The server talks to Alpaca, and it is the only thing that holds your API keys.</p>
+<p>The server offers a list of tools: read the account, fetch price bars, read the news, list orders. Claude can call those freely. The one that places an order has to ask you first, every single time.</p>
+</section>
+<section id="part-2">
+<h2>Setting it up <a class="at" href="https://www.youtube.com/watch?v=EYmt8iX31ao&amp;t=80s">Watch from 1:20</a></h2>
+<figure><img src="img/slide-04.jpg" alt="Setting it up: a frame from the video" loading="lazy" width="1280" height="720"></figure>
+<p>Right. Nothing installed yet, so let us start there. Claude Code runs in a terminal - the black window with text in it - and that is what I am using all the way through this video, because you can see every step happen.</p>
+<p>There is also a desktop app, if a window suits you better. The setup is the same idea either way: the same server, the same keys, the same questions before it trades.</p>
+<p>This is the official setup page. I will put the link in the description, but you can find it by searching for Claude Code setup.</p>
+<p>Scroll to Install Claude Code, and there are the choices: one line for Mac, Linux and Windows Subsystem for Linux, Homebrew if you use it, WinGet on Windows. Pick your row, copy the line, and paste it into a terminal.</p>
+<p>Here it is running for real. I am using the package manager version so it lands in a folder of its own rather than over the top of anything you already have.</p>
+<p>30 seconds, and it is on the machine.</p>
+<p>Then the one check worth doing: ask it its version. If a number comes back, you are installed. If it says command not found, close the terminal, open a new one, and try again - that fixes it nine times out of ten.</p>
+<p>So let us build it from nothing. This is Alpaca's dashboard, on a paper account I made for this channel: $100,000 of pretend money, and a banner reminding me none of it is real.</p>
+<p>Everything you need is on this one page. Down here, the API keys: an endpoint, a key, and a button to generate a new pair.</p>
+<p>I have blanked mine out, and you should treat yours the same way. The secret is shown once, when you press Generate, and never again.</p>
+<p>Now the keys. Never paste them into a command you type, into a chat, or into a script you might share one day.</p>
+<p>They go in a small file of their own: one line for the key, one line for the secret. Mine says PK dot dot dot here, because I am not showing you my real one.</p>
+<p>Then change the permissions so only you can read that file, and load it into the shell with source. That change of permissions matters: without it, anyone with an account on the machine can read your keys.</p>
+<p>And here is how to check it worked without printing them: ask for the names only. Both are set, and neither is on screen. That is the habit to keep.</p>
+<p>Now the other half. This is a terminal, and this is Claude Code: the version command tells me it is installed.</p>
+<p>One command connects it to the broker. Notice what I am typing where the keys go: the name of a variable, rather than a key. The shell fills it in when the command runs, so the key itself never appears on screen, and never ends up in a video.</p>
+<p>It writes the server into this project's configuration.</p>
+<p>And listing the servers shows alpaca, waiting for me to approve it the first time I run Claude here. That is it. That is the whole setup.</p>
+<p>Before we let it loose, one rule worth knowing. The tools split into two kinds.</p>
+<p>Anything that only reads - prices, bars, your balances, your orders - Claude can call whenever it likes. Anything that moves money stops at a gate and waits for you to say yes. Keep that gate. It is the difference between an assistant and an accident.</p>
+<p>One more thing worth knowing before we trade, and it is the little line at the bottom of the screen.</p>
+<p>Right now it says manual mode: it stops and asks before it does anything at all.</p>
+<p>Shift and tab cycles through the others. Accept edits, which is about changing files rather than placing orders.</p>
+<p>Plan mode, where it works out what it would do and does none of it - good for trying an idea out safely.</p>
+<p>And auto mode, where it stops asking. That is the one to reach for once you trust what it is doing and you are tired of pressing yes.</p>
+<p>Shift and tab once more brings you back to manual. My advice: stay in manual while money is involved, and turn auto on for the reading and the research.</p>
+</section>
+<section id="part-3">
+<h2>Trading live <a class="at" href="https://www.youtube.com/watch?v=EYmt8iX31ao&amp;t=292s">Watch from 4:52</a></h2>
+<figure><img src="img/slide-12.jpg" alt="Trading live: a frame from the video" loading="lazy" width="1280" height="720"></figure>
+<p>Here is Claude Code with that server connected. I have sped the waiting up where it drags, and the badge in the corner says when.</p>
+<p>This is the list of tools it can reach - the account, the prices, the orders, and the one that trades.</p>
+<p>First question: what is in the account, and what is bitcoin doing.</p>
+<p>The first time it reaches for a tool, it asks.</p>
+<p>I say yes, and the answer comes back: just under $100,000, one small bitcoin position left over from an earlier run, and bitcoin trading at about 84,000.</p>
+<p>Now the strategy. This is the part that used to be a Python file: is bitcoin above its 20 day average?</p>
+<p>It pulls the daily bars itself, works out the average, and answers with the numbers. 83,900 against an average of 79,500: five and a half percent above. It even says which days it used, and that leaving today's unfinished bar out or in does not change the answer. The rule says buy.</p>
+<p>Now the real test. $200 of bitcoin, bought at the market so that it fills straight away rather than sitting there waiting for a price.</p>
+<p>Watch what happens before a single thing is sent.</p>
+<p>And there is the gate. It tells me exactly what it is about to do, and it waits.</p>
+<p>I say yes, and only then does the order go out: a couple of thousandths of a bitcoin, filled at a shade under $84,000. It also tells me what it decided on my behalf: crypto orders cannot be day orders, so it made this one good till cancelled.</p>
+<p>That is the terminal's version of events, and you should never take one side's word for it. So here is Alpaca's own dashboard, for that same paper account, loaded fresh.</p>
+<p>And the list is empty, which is the right answer: it is showing open orders, and a market order does not stay open. It filled the instant it was sent. The one thing we are about to place will sit here, because a stop waits.</p>
+<p>Now watch both at the same time: Claude on the left, the broker on the right. One more instruction, and this is the one that matters if the price goes the wrong way. Protect that position with a stop, 4% below what I paid for it.</p>
+<p>It works the price out from what I actually paid, not from wherever the market happens to be now.</p>
+<p>It asks again, because this is another order, and I say yes again.</p>
+<p>And there it is on both sides at once: a stop limit to sell at 80,631, and it tells me two things I did not ask about. It chose a limit price under the stop, and it points out that the bitcoin I bought earlier is not covered by this one.</p>
+</section>
+<section id="part-4">
+<h2>Verdict <a class="at" href="https://www.youtube.com/watch?v=EYmt8iX31ao&amp;t=432s">Watch from 7:12</a></h2>
+<figure><img src="img/slide-17.jpg" alt="Verdict: a frame from the video" loading="lazy" width="1280" height="720"></figure>
+<p>So what did it actually do? It read real prices, applied the rule I gave it in words, sized the order, and placed it. Then it protected the position and told me what it had chosen on my behalf.</p>
+<p>That last part is the thing to hold on to. It picked the limit price under the stop. It picked good till cancelled. It noticed the older lot was uncovered. Every one of those decisions was in the question it asked me before it sent anything - which is exactly why you read the gate instead of pressing yes.</p>
+<p>Once the plumbing is there, the strategy is just what you ask for. A morning briefing on what moved overnight and why.</p>
+<p>A weekly rebalance back to your target weights. The same six checks before every earnings trade, asked the same way every time. None of that needs a new script - it needs a better sentence.</p>
+<p>If you try this, do it exactly the way I did: a paper account, keys that only reach that account, and the gate left switched on. Watch what it chooses for a week before you let it near real money.</p>
+<p>This is education, not financial advice. The setup is in the description, and the next one takes the conversation away and leaves an agent following rules you wrote. See you there.</p>
+</section>
+<aside class="related"><h2>More lessons</h2><ul><li><a href="../agent-desk/">I split my AI trader into multi agents trader (Claude Agent SDK + Alpaca)</a></li><li><a href="../alert-to-claude/">My AI trades while I'm away: a TradingView alert wakes Claude, and it places the order (Alpaca)</a></li><li><a href="../always-on-cloud/">My AI trading bot runs 24/7 on a free Google Cloud server (TradingView, Claude, Alpaca)</a></li></ul></aside>
+</article>
+</main>
+<footer><p>Everything here is for education purposes only, and none of it is financial advice.</p><p><a href="https://www.youtube.com/@nexusfission">Nexus Fission on YouTube</a> &middot; <a href="https://github.com/nexusfissioncode/algo-trading">Code on GitHub</a></p></footer>
+</body>
+</html>
